@@ -1,0 +1,253 @@
+$color-primaire: #9356DC;
+$color-secondaire: #FF79DA ;
+$color-tertiaire: #99E2D0;
+$color-quatrieme:#F2F2F2;
+.corps {
+    margin: 0px;
+    font-family: 'Roboto', 'sans-serif';
+    font-size: 20px;
+}
+.nav-logo {
+    text-align: center;
+}
+.barre_de_recherche {
+    background-color: darken($color-quatrieme, 10%);
+}
+.nav-localisation {
+    font-size: 24px;
+    border-top: 4px solid darken($color-quatrieme, 20%);
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.nav-localisation p {
+    display: inline;
+    font-size: 16px;
+    margin-left: 50px;
+    font-weight: 600;
+}
+.nav-descriptif {
+    background-color: $color-quatrieme;
+    padding-bottom: 90px;
+    text-align: center;
+}
+.nav-titre {
+    font-size: 24px;
+    font-weight: 900;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+.nav-explication {
+    font-size:16px;
+    margin-bottom: 60px;
+}
+.nav-bouton {
+    display: inline;
+    color: white;
+    font-size: 14px;
+    padding:40px;
+    border-radius: 150px;
+    background-color: $color-primaire;
+    margin-bottom: 30px;
+}
+.fonctionnement-titre {
+    font-size: 24px;
+    padding-inline-start: 0px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.fonctionnement ul{
+    list-style-type: none;
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-inline-start: 0px;
+}
+.fonctionnement-liste__element {
+    border-radius: 75px;
+    border: 1px solid #F2F2F2;
+    background-color: #F2F2F2;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.fonctionnement-liste__numero_element {
+    display: inline;
+    border-radius: 40px;
+    padding-left: 25px;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    left: -25px;
+    top: 0px;
+    background-color: $color-primaire;
+    margin-left: 0px;
+    margin-right: 60px;
+    font-size: 12px;
+    color: white;
+}
+.fonctionnement-liste :hover i {
+    color: $color-primaire;
+}
+.fonctionnement_liste__titre {
+    display: inline;
+    margin-left: 30px;
+}
+.restaurants {
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+}
+.restaurants-titre {
+    margin-left: 30px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    align-self: start;
+    margin-bottom: 30px;
+}
+.restaurants-accroche {
+    height: 600px;
+    width: 90%;
+    border: 1px solid #F2F2F2;
+    border-radius: 25px;
+    background-color: #ffffff;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 60px;
+}
+.restaurants-accroche img {
+    object-fit: cover;
+    height:400px;
+    width:100%;
+    border-radius: 25px 25px 0px 0px;
+}
+.restaurant-accroche__nouveau {
+    display:inline;
+    position: relative;
+    top:-365px;
+    left:85%;
+    color: darken($color-tertiaire, 40%);
+    background-color: $color-tertiaire;
+    padding: 15px;
+    border-radius: 5px;
+}
+.restaurant-accroche__pas_nouveau {
+    display: none;
+}
+.restaurants-accroche__commentaire {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 30px 0px 30px;
+}
+.restaurants-accroche__commentaire h3 {
+    font-size: 24px;
+}
+.restaurant-accroche__titre {
+    display: flex;
+    flex-direction: column;
+}
+.restaurants-accroche__commentaire i {
+    color: black;
+    &:hover{
+        color: $color-primaire;
+    }
+}
+.pied_de_page {
+    color: #ffffff;
+    background-color: darken($color-quatrieme, 80%);
+    padding-left: 30px;
+}
+.pied_de_page-titre {
+    padding-top: 30px;
+}
+.pied_de_page-lien {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.pied_de_page-lien i {
+    margin-right: 15px;
+}
+.menu__navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:left;
+}
+.menu__navigation-fleche {
+    position: absolute;
+    top: 50px; left:20px;
+}
+.menu__navigation-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.menu__image img {
+    object-fit: cover;
+    height: 600px;
+    width: 100%;
+}
+.menu {
+    padding: 15px;
+    border-radius: 25px 25px 0px 0px;
+    background-color: $color-quatrieme;
+}
+.menu__titre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu__titre-texte {
+    margin-block-end: 0px;
+    margin-block-start: 0px;
+    font-size: 44px;
+    font-weight: 900;
+}
+.Entrees__titre, .Plats__titre, .Desserts__titre {
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-top:40px;
+    border-bottom: 1px solid $color-tertiaire;
+}
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    padding:10px;
+    border-radius: 25px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.Entrees__choix:hover, .Plats__choix:hover, .Desserts__choix:hover{
+    background: linear-gradient(to right,#ffffff 80%, $color-tertiaire 80% 100%);
+    border-radius: 25px;
+}
+.Entrees__choix-pas_prix, .PLats__choix-pas_prix, .Desserts__choix-pas_prix {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
+    font-weight: 700;
+    font-size: 22px;
+}
+.Entrees__choix-complement, .Plats__choix-complement, .Desserts__choix-complement {
+    font-size: 20px;
+}
+.Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix{
+    display: flex;
+    flex-direction: column-reverse;
+    font-weight: 700;
+}
