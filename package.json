@@ -1,0 +1,19 @@
+{
+  "name": "ohmyfood_deborde_raphael",
+  "version": "1.0.0",
+  "description": "reservation de menu",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./scss/styles.scss:./css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raphaeldeborde/Deborde_Raphael_1_Github.git"
+  },
+  "author": "raphael deborde",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raphaeldeborde/Deborde_Raphael_1_Github/issues"
+  },
+  "homepage": "https://github.com/raphaeldeborde/Deborde_Raphael_1_Github#readme"
+}
