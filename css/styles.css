@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Shrikhand;
+  src: url("shrikhand.regular.ttf");
+}
+.police-titre {
+  font-family: "Shrikhand";
+}
+
 .corps {
   margin: 0px;
   font-family: "Roboto", "sans-serif";
@@ -134,7 +142,7 @@
 
 .restaurant-accroche__nouveau {
   display: inline;
-  position: relative;
+  position: absolute;
   top: -365px;
   left: 85%;
   color: #278870;

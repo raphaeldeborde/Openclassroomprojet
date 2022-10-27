@@ -2,6 +2,17 @@ $color-primaire: #9356DC;
 $color-secondaire: #FF79DA ;
 $color-tertiaire: #99E2D0;
 $color-quatrieme:#F2F2F2;
+@font-face {
+    font-family: Shrikhand;
+    src: url('shrikhand.regular.ttf')
+}
+.police-titre {
+    font-family: 'Shrikhand';
+}
+.lien {
+    text-decoration: none;
+    color: black;
+}
 .corps {
     margin: 0px;
     font-family: 'Roboto', 'sans-serif';
@@ -136,7 +147,7 @@ $color-quatrieme:#F2F2F2;
 .restaurant-accroche {
     &__nouveau {
     display:inline;
-    position: relative;
+    position: absolute;
     top:-365px;
     left:85%;
     color: darken($color-tertiaire, 40%);
