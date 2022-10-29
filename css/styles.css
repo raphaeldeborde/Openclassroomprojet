@@ -6,10 +6,43 @@
   font-family: "Shrikhand";
 }
 
+.lien {
+  text-decoration: none;
+  color: black;
+}
+
+.titre {
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+}
+
+.surligner_a_moitie {
+  display: flex;
+  flex-direction: row;
+}
+
+.surligner {
+  border-bottom: 1px solid #99E2D0;
+  padding-bottom: 10px;
+}
+
+.centrer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hauteur_130 {
+  margin-top: 90px;
+  margin-bottom: 40px;
+}
+
 .corps {
   margin: 0px;
   font-family: "Roboto", "sans-serif";
   font-size: 20px;
+  width: 100%;
 }
 
 .nav-logo {
@@ -42,8 +75,6 @@
 .nav-titre {
   font-size: 24px;
   font-weight: 900;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
   padding-top: 30px;
   margin-bottom: 30px;
 }
@@ -54,8 +85,8 @@
 .nav-bouton {
   display: inline;
   color: white;
-  font-size: 14px;
-  padding: 40px;
+  font-size: 20px;
+  padding: 18px 30px 18px 30px;
   border-radius: 150px;
   background-color: #9356DC;
   margin-bottom: 30px;
@@ -73,35 +104,47 @@
   margin-right: 60px;
   padding-inline-start: 0px;
 }
+.fonctionnement-liste :hover {
+  background-color: #f2eafb;
+}
 .fonctionnement-liste__element {
-  border-radius: 75px;
+  border-radius: 25px;
   border: 1px solid #F2F2F2;
   background-color: #F2F2F2;
   margin-top: 30px;
   margin-bottom: 30px;
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  box-shadow: 5px 5px 5px #d9d9d9;
+}
+.fonctionnement-liste__element p {
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .fonctionnement-liste__numero_element {
   display: inline;
   border-radius: 40px;
-  padding-left: 25px;
-  padding-top: 20px;
-  padding-right: 20px;
-  padding-bottom: 20px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
   position: relative;
   left: -25px;
   top: 0px;
   background-color: #9356DC;
   margin-left: 0px;
   margin-right: 60px;
-  font-size: 12px;
+  font-size: 18px;
   color: white;
 }
 
 .fonctionnement-liste :hover i {
   color: #9356DC;
+}
+
+.fonctionnement-liste :hover span {
+  background-color: #9356DC;
 }
 
 .fonctionnement_liste__titre {
@@ -120,22 +163,26 @@
 
 .restaurants-titre {
   margin-left: 30px;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
   align-self: start;
   margin-bottom: 30px;
 }
 .restaurants-accroche {
-  height: 600px;
-  width: 90%;
+  height: 300px;
+  width: 95%;
   border: 1px solid #F2F2F2;
   border-radius: 25px;
   background-color: #ffffff;
   margin: 0px 30px 60px;
 }
+.restaurants-accroche__texte {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 80px;
+}
 .restaurants-accroche img {
   object-fit: cover;
-  height: 400px;
+  height: 200px;
   width: 100%;
   border-radius: 25px 25px 0px 0px;
 }
@@ -165,8 +212,7 @@
   align-items: center;
   padding: 0px 30px 0px 30px;
 }
-
-.restaurant-accroche h3 {
+.restaurants-accroche__commentaire h3 {
   font-size: 24px;
 }
 
@@ -178,13 +224,15 @@
 }
 
 .pied_de_page {
+  position: relative;
+  top: -20px;
   color: #ffffff;
   background-color: #262626;
   padding-left: 30px;
+  padding-bottom: 20px;
 }
 .pied_de_page-titre {
   padding-top: 20px;
-  margin-block-start: 0;
 }
 .pied_de_page-lien {
   display: flex;
@@ -195,14 +243,37 @@
   margin-right: 15px;
 }
 
+.menu__image {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 575px;
+}
+
+.menu_et_image {
+  width: 100%;
+}
+
+.menu {
+  position: relative;
+  top: -20px;
+  left: 0;
+  padding: 15px 15px 100px 15px;
+  border-radius: 50px 50px 0px 0px;
+  background-color: #F2F2F2;
+}
+
 .menu__navigation {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
 }
 .menu__navigation-fleche {
   font-size: 20px;
+  position: absolute;
+  top: 60px;
+  left: 20px;
 }
 .menu__navigation-logo {
   display: flex;
@@ -223,32 +294,21 @@
   width: 100%;
 }
 
-.menu {
-  padding: 15px;
-  border-radius: 25px 25px 0px 0px;
-  background-color: #F2F2F2;
-}
-
 .menu__titre {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding-top: 30px;
 }
 .menu__titre-texte {
-  margin-block-end: 0px;
-  margin-block-start: 0px;
   font-size: 44px;
   font-weight: 900;
 }
 
 .Entrees__titre, .Plats__titre, .Desserts__titre {
   display: inline-block;
-  padding-bottom: 10px;
-  margin-block-start: 0px;
-  margin-block-end: 0px;
   margin-top: 40px;
-  border-bottom: 1px solid #99E2D0;
 }
 
 .Entrees__choix, .Plats__choix, .Desserts__choix {
@@ -266,25 +326,44 @@
   border-radius: 25px;
 }
 
-.Entrees__choix-pas_prix, .PLats__choix-pas_prix, .Desserts__choix-pas_prix {
+.Entrees__choix-pas_prix, .Plats__choix-pas_prix, .Desserts__choix-pas_prix, .Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
+  margin: 5px 0px 5px 0px;
 }
 
 .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
   font-weight: 700;
   font-size: 22px;
+  margin: 5px 0px 5px 0px;
 }
 
 .Entrees__choix-complement, .Plats__choix-complement, .Desserts__choix-complement {
   font-size: 20px;
+  margin: 5px 0px 5px 0px;
 }
 
 .Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix {
-  display: flex;
-  flex-direction: column-reverse;
   font-weight: 700;
+}
+
+.prix {
+  margin: 5px 0px 5px 0px;
+}
+.prix__fantome {
+  margin: 5px 0px 5px 0px;
+  color: #ffffff;
+}
+
+.menu__commander {
+  display: inline;
+  color: white;
+  font-size: 20px;
+  padding: 18px 60px 18px 60px;
+  border-radius: 150px;
+  background-color: #9356DC;
+  margin-bottom: 30px;
 }
 
 /*# sourceMappingURL=styles.css.map */
