@@ -23,6 +23,12 @@ $breakpoints__4: (
 $breakpoints: (
      desktop: 1150px
 );
+$breakpoints__B: (
+    desktop-2: 2000px
+);
+$breakpoints__C: (
+    desktop-3: 2500px
+);
 
 @font-face {
     font-family: Shrikhand;
@@ -65,10 +71,79 @@ $breakpoints: (
         @media screen and (min-width: map-get($breakpoints__4, mobile-taille_4)) and (max-width:map-get($breakpoints, desktop)) {
             @content;
         }
+    }
+@mixin tablette {
+        @media screen and (min-width: map-get($breakpoints__3, mobile-taille_3)) and (max-width:map-get($breakpoints, desktop)) {
+            @content;
+        }
     }       
 @mixin desktop {
-    @media screen and (min-width: map-get($breakpoints, desktop)) {
+    @media screen and (min-width: map-get($breakpoints, desktop)) and (max-width:map-get($breakpoints__B, desktop-2)) {
         @content;
+    }
+}
+@mixin desktop-2 {
+    @media screen and (min-width: map-get($breakpoints__B, desktop-2)) and (max-width:map-get($breakpoints__C, desktop-3)) {
+        @content;
+    }
+}
+.chargeur {
+    background-color: white;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    opacity: 0,1;
+    animation: disparition-magique 1500ms 350ms forwards;
+}
+.chargeur-rond {
+    width:200px;
+    height:200px;
+    position: inherit;
+    left: 50%;
+    top: 50%; 
+}
+.progression {
+    &__disque {
+        width: 250px;
+        height: 250px;
+        position:absolute;
+        border-radius: 50%;
+        background: linear-gradient(355deg, lighten($color-tertiaire,5%) 12.5%,lighten($color-secondaire,5%));
+        animation: progression-disque 1500ms 350ms;
+        opacity: 0;
+    }
+}
+@keyframes progression-disque{
+    0% {
+        transform: rotate('0');
+    }
+    25% {
+        transform: rotate('180');
+        opacity: 0.5;
+    }
+    50% {
+        transform: rotate('270');
+        opacity: 1;
+    }
+    75% {
+        transform: rotate('315');
+        opacity:0,75;
+    }
+    100% {
+        transform: rotate('359');
+        opacity: 0;
+    }
+}
+@keyframes disparition-magique{
+    0% {
+        
+    }
+    5% {
+        transform:scale(0.99);
+
+    }
+    100% {
+        transform:scale(0);
     }
 }
 .police-titre {
@@ -144,7 +219,7 @@ $breakpoints: (
     @include padding-size(30px 0px 0px 0px);
     }
     &-explication {
-    font-size:16px;
+    font-size:18px;
     margin:0px 0px 60px 0px;
     padding:10px 0px 10px 0px;
     @include desktop {
@@ -154,15 +229,20 @@ $breakpoints: (
     &-bouton {
     display: inline;
     color: white;
-    font-size: 20px;
+    font-size: 19px;
+    box-shadow: 3px 3px darken($color-quatrieme, 5%), -3px 3px darken($color-quatrieme, 5%);
     @include padding-size(18px 30px 18px 30px);
     border-radius: 150px;
-    background-color: $color-primaire;
+    background: linear-gradient(355deg, $color-primaire 12.5%,$color-secondaire);
     margin: 0px 0px 30px 0px;
     @include desktop {
         margin: 0px 0px 0px 0px;
     }
     }
+}
+.explorer :hover {
+    background: linear-gradient(355deg, lighten($color-primaire,5%) 12.5%,lighten($color-secondaire,5%));
+    box-shadow: 6px 6px darken($color-quatrieme, 5%), -6px 6px darken($color-quatrieme, 5%);
 }
 .fonctionnement {
     padding: 50px 0px 50px 0px;
@@ -199,12 +279,12 @@ $breakpoints: (
             background-color: lighten($color-primaire, 35%);
         }
         &__element {
-            border-radius: 25px;
+            border-radius: 20px;
             border: 1px solid $color-quatrieme;
             background-color: $color-quatrieme;
             margin: 30px 0px 30px 0px;
             @include padding-size(20px 0px 20px 0px);
-            box-shadow: 5px 5px 5px darken($color-quatrieme,10%);
+            box-shadow: 4px 4px 4px darken($color-quatrieme,5%);
             @include desktop {
                 margin: 0px 10px 0px 10px;
             }
@@ -258,9 +338,24 @@ $breakpoints: (
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include tablette {
+        display:flex;
+        flex-direction: row;
+    }
     @include desktop {
-            display:flex;
-            flex-direction: row;
+        display:flex;
+        flex-direction: row;
+    }
+}
+.deux_cartes_de_restaurants {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 97%;
+    @include desktop {
+        display: flex;
+        flex-direction: row;
     }
 }
 .restaurants {
@@ -272,9 +367,11 @@ $breakpoints: (
     &-accroche {
         height: 300px;
         width: 95%;
+        position: relative;
         border: 1px solid $color-quatrieme;
-        border-radius: 25px;
+        border-radius: 15px;
         background-color: #ffffff;
+        box-shadow: 2px 2px darken($color-quatrieme,5%), -2px 2px darken($color-quatrieme,5%);
         margin: 10px 0px 10px 0px;
         @include desktop {
             margin: 10px;
@@ -299,41 +396,23 @@ $breakpoints: (
             object-fit: cover;
             height:200px;
             width:100%;
-            border-radius: 25px 25px 0px 0px;
+            border-radius: 15px 15px 0px 0px;
         }
     }
 }
 .restaurant-accroche {
     &__nouveau {
-    display:inline;
-    position: absolute;
-    left:65%;
-    @include mobile-taille_1 {
+        display:inline;
         position: absolute;
-        left:70%;
-    }
-    @include mobile-taille_2 {
-        position: absolute;
-        left:75%;
-    }
-    @include mobile-taille_3 {
-        position: absolute;
-        left:80%;
-    }
-    @include mobile-taille_4 {
-        position: absolute;
-        left:85%;
-    }
-    @include desktop {
-        position: absolute;
-        top:63%;
-        left:15%;
-    }
-    color: darken($color-tertiaire, 40%);
-    background-color: $color-tertiaire;
-    padding: 15px;
-    border-radius: 5px;
-    }
+        top:2px;
+        right:10px;
+        color: darken($color-tertiaire, 40%);
+        background-color: $color-tertiaire;
+        padding: 10px 15px 10px 15px;
+        border-radius: 2px;
+        font-weight: 600;
+        font-size: 16px;
+        }
     &__pas_nouveau {
     display: none;
     }
@@ -349,16 +428,38 @@ $breakpoints: (
         align-items: center;
         padding: 0px 30px 0px 30px;
 }
-.restaurant-accroche i {
-            color: black;
-            &:hover{
-                color: $color-primaire;
-            }
+.coeur {
+    color: black;
+    position: relative;
+    z-index: 1;
+    &:hover {
+        color: transparent;
+        & .coeur_rempli {
+            opacity: 1;
+        }
+    }
+    &_rempli {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: -webkit-linear-gradient(355deg, $color-primaire 12.5%,$color-secondaire);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 650ms;
+    }
 }
 .pied_de_page {
     position: absolute;
     top:2325px; left:0px;
     width: 100%;
+    @include tablette {
+        position: absolute;
+        top: 1690px; left:0;
+    }
     @include desktop {
         position: absolute;
         top:850px; left:0;
@@ -444,12 +545,16 @@ $breakpoints: (
 .menu__image {
     position: relative;
     top: 0px; left: 0px;
-    opacity:50%;
+    @include desktop {
+        opacity:50%;
+    }
 }
 .menu__image-enchantee {
     position: relative;
     top: 0px; left: 0px;
-    opacity:50%;
+    @include desktop {
+        opacity:50%;
+    }
 }
 .menu_et_image {
     width:100%;
@@ -509,6 +614,11 @@ $breakpoints: (
     flex-direction: column;
     justify-content: space-around;
     margin: 5px 0px 5px 0px;
+    @include tablette {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
 }
 .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
     font-weight: 700;
@@ -516,6 +626,9 @@ $breakpoints: (
     margin: 5px 0px 5px 0px;
     @include mobile-hauteur-pied_de_page {
         font-size: 15px;
+    }
+    @include tablette {
+        padding: 0px 5px 0px 5px;
     }
 }
 .Entrees__choix-complement, .Plats__choix-complement, .Desserts__choix-complement {
@@ -539,16 +652,21 @@ $breakpoints: (
     }
 }
 .menu__commander {
+    box-shadow: 3px 3px darken($color-quatrieme, 5%), -3px 3px darken($color-quatrieme, 5%);
+    background: linear-gradient(355deg, $color-primaire 12.5%,$color-secondaire); 
+    @include padding-size(18px 60px 18px 60px);
+    border-radius: 150px;
+    margin:0px 0px 15px 0px;
     display: inline;
     color: white;
     font-size: 20px;
-    @include padding-size(18px 60px 18px 60px);
-    border-radius: 150px;
-    background-color: $color-primaire;
-    margin:0px 0px 15px 0px;
     @include mobile-hauteur-pied_de_page {
         font-size: 15px;
     }
+}
+.bouton-hover :hover{
+    background: linear-gradient(355deg, lighten($color-primaire,5%) 12.5%,lighten($color-secondaire,5%));
+    box-shadow: 6px 6px darken($color-quatrieme, 5%), -6px 6px darken($color-quatrieme, 5%);
 }
 .centpxbottom {
     padding: 50px 0px 62px 0px;
@@ -567,6 +685,10 @@ $breakpoints: (
         position: absolute;
         top:738px; left:0;
         padding: 40px 0px 41px 0px;
+    }
+    @include tablette {
+        position: absolute;
+        top:1625px; left:0;
     }
     @include mobile_hauteur-pied_de_page {
         position: absolute;
@@ -599,6 +721,10 @@ $breakpoints: (
         position: absolute;
         top:810px; left:0;
         padding: 5px 0px 5px 0px;
+    }
+    @include tablette {
+        position:absolute;
+        top:1715px; left:0;
     }
     @include mobile_hauteur-pied_de_page {
         position: absolute;
