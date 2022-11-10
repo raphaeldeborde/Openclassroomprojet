@@ -92,15 +92,16 @@ $breakpoints__C: (
     position: fixed;
     z-index: 999;
     width: 100%;
-    opacity: 0,1;
-    animation: disparition-magique 1500ms 350ms forwards;
+    opacity: 0,9;
+    animation: disparition 1000ms 199ms ease-in-out;
 }
 .chargeur-rond {
     width:200px;
     height:200px;
     position: inherit;
     left: 50%;
-    top: 50%; 
+    top: 50%;
+    animation: disparition-magique 1500ms 350ms forwards ease-in-out alternate 6; 
 }
 .progression {
     &__disque {
@@ -109,7 +110,7 @@ $breakpoints__C: (
         position:absolute;
         border-radius: 50%;
         background: linear-gradient(355deg, lighten($color-tertiaire,5%) 12.5%,lighten($color-secondaire,5%));
-        animation: progression-disque 1500ms 350ms;
+        animation: progression-disque 3250ms ease-in-out 350ms;
         opacity: 0;
     }
 }
@@ -117,20 +118,68 @@ $breakpoints__C: (
     0% {
         transform: rotate('0');
     }
-    25% {
+    7% {
         transform: rotate('180');
         opacity: 0.5;
     }
-    50% {
+    14% {
+        transform: rotate('270');
+        opacity: 1;
+    }
+    22% {
+        transform: rotate('315');
+        opacity:0,75;
+    }
+    29% {
+        transform: rotate('359');
+        opacity: 0;
+    }
+    36% {
+        transform: rotate('315');
+        opacity: 0.5;
+    }
+    41% {
+        transform: rotate('270');
+        opacity: 1;
+    }
+    48% {
+        transform: rotate('180');
+        opacity:0,75;
+    }
+    58% {
+        transform: rotate('0');
+        opacity: 0;
+    }
+    56% {
+        transform: rotate('315');
+        opacity: 0.5;
+    }
+    72% {
         transform: rotate('270');
         opacity: 1;
     }
     75% {
+        transform: rotate('180');
+        opacity:0,75;
+    }
+    80% {
+        transform: rotate('359');
+        opacity: 0;
+    }
+    81% {
         transform: rotate('315');
+        opacity: 0.5;
+    }
+    88% {
+        transform: rotate('270');
+        opacity: 1;
+    }
+    96% {
+        transform: rotate('180');
         opacity:0,75;
     }
     100% {
-        transform: rotate('359');
+        transform: rotate('0');
         opacity: 0;
     }
 }
@@ -138,9 +187,61 @@ $breakpoints__C: (
     0% {
         
     }
+    3% {
+        transform:scale(0.9);
+    }
     5% {
-        transform:scale(0.99);
-
+        transform:scale(1);
+    }
+    8% {
+        transform:scale(1);
+    }
+    23% {
+        transform:scale(0.13);
+    }
+    26% {
+        transform:scale(0);
+    }
+    30% {
+        transform:scale(0.07);
+    }
+    47% {
+        transform:scale(0.66);
+    }
+    48% {
+        transform:scale(0.61);
+    }
+    50% {
+        transform:scale(0.63);
+    }
+    78% {
+        transform:scale(0.07);
+    }
+    79% {
+        transform:scale(0);
+    }
+    80% {
+        transform:scale(0.04);
+    }
+    89% {
+        transform:scale(0.10);
+    }
+    90% {
+        transform:scale(0.11);
+    }
+    91% {
+        transform:scale(0.08);
+    }
+    99% {
+        transform:scale(0.01);
+    }
+    100% {
+        transform:scale(0);
+    }
+}
+@keyframes disparition {
+    0% {
+        transform:scale(1);
     }
     100% {
         transform:scale(0);
