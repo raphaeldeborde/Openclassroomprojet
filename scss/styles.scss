@@ -5,12 +5,6 @@ $color-quatrieme:#F2F2F2;
 $breakpoints__fonctionnement_ul: (
     mobile__fonctionnement_ul:365px
 );
-$breakpoints__hauteur-pied_de_page: (
-    mobile__hauteur-pied_de_page:400px
-);
-$breakpoints__menu-commander: (
-    mobile__menu-commander:400px
-);
 $breakpoints__2:(
     mobile-taille_2: 500px
 );
@@ -39,16 +33,6 @@ $breakpoints__C: (
     }
 @mixin mobile-fonctionnement_ul {
     @media screen and (max-width: map-get($breakpoints__fonctionnement_ul, mobile__fonctionnement_ul)) {
-           @content;   
-    }
-}
-@mixin mobile-hauteur-pied_de_page {
-    @media screen and (max-width: map-get($breakpoints__hauteur-pied_de_page, mobile__hauteur-pied_de_page)) {
-           @content;   
-    }
-}
-@mixin mobile-commander {
-    @media screen and (max-width: map-get($breakpoints__menu-commander, mobile__menu-commander)) {
            @content;   
     }
 }
@@ -91,27 +75,29 @@ $breakpoints__C: (
     background-color: white;
     position: fixed;
     z-index: 999;
+    height:100vh;
     width: 100%;
-    opacity: 0,9;
-    animation: disparition 1000ms 199ms ease-in-out;
+    opacity:0.7;
+    animation: disparition 2801ms 199ms forwards;
 }
 .chargeur-rond {
     width:200px;
     height:200px;
     position: inherit;
     left: 50%;
-    top: 50%;
-    animation: disparition-magique 1500ms 350ms forwards ease-in-out alternate 6; 
+    top: 25%;
+    animation: disparition-magique 1500ms 350ms ease-in-out; 
 }
 .progression {
     &__disque {
-        width: 250px;
-        height: 250px;
-        position:absolute;
+         width: 500px;
+        height: 500px;
         border-radius: 50%;
         background: linear-gradient(355deg, lighten($color-tertiaire,5%) 12.5%,lighten($color-secondaire,5%));
-        animation: progression-disque 3250ms ease-in-out 350ms;
         opacity: 0;
+        position:absolute;
+        top: 50%; left:50%;
+        animation: progression-disque 1000ms ease-in-out 250ms;
     }
 }
 @keyframes progression-disque{
@@ -194,7 +180,7 @@ $breakpoints__C: (
         transform:scale(1);
     }
     8% {
-        transform:scale(1);
+        transform:scale(0.8);
     }
     23% {
         transform:scale(0.13);
@@ -247,6 +233,16 @@ $breakpoints__C: (
         transform:scale(0);
     }
 }
+.passage_aux_trois_petits_points {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    word-wrap: break-Word;
+    overflow: hidden;
+}
+.barre_de_recherche {
+    background-color: darken($color-quatrieme, 10%);
+}
 .police-titre {
     font-family: 'Shrikhand';
 }
@@ -284,6 +280,11 @@ $breakpoints__C: (
 .nav-logo {
     text-align: center;
     scale: 0.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    object-fit: cover;
+    height: 100px;
 }
 .barre_de_recherche {
     background-color: darken($color-quatrieme, 10%);
@@ -554,17 +555,7 @@ $breakpoints__C: (
     }
 }
 .pied_de_page {
-    position: absolute;
-    top:2325px; left:0px;
-    width: 100%;
-    @include tablette {
-        position: absolute;
-        top: 1690px; left:0;
-    }
-    @include desktop {
-        position: absolute;
-        top:850px; left:0;
-    }
+    position: relative;
     color: #ffffff;
     background-color: darken($color-quatrieme, 80%);
     @include padding-size(0px 0px 40px 0px);
@@ -673,9 +664,6 @@ $breakpoints__C: (
     &-texte {
     font-size: 35px;
     font-weight: 900;
-    @include mobile-hauteur-pied_de_page {
-        font-size: 24px;
-    }
     }
 }
 .Entrees__titre, .Plats__titre, .Desserts__titre {
@@ -684,37 +672,58 @@ $breakpoints__C: (
     @include desktop {
         color:black
     }
-    @include mobile-hauteur-pied_de_page {
-        font-size: 15px;
+}
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    &_1, &_2, &_3, &_4 {
+        border-radius: 25px;
+        background-color: #ffffff;
+        @include desktop {
+            background-color: transparent;
+            color:black;
+            border: $color-primaire 1px solid;
+        }
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 20px 10px 0px 10px;
     }
 }
 .Entrees__choix, .Plats__choix, .Desserts__choix {
-    @include padding-size(10px 10px 10px 10px);
-    border-radius: 25px;
-    background-color: #ffffff;
-    @include desktop {
-        background-color: transparent;
-        color:black;
-        border: $color-primaire 1px solid;
+    &_1 {
+        animation: apparitions_succesives 1000ms 250ms ease-in-out;
     }
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 20px 10px 0px 10px;
 }
-.Entrees__choix:hover, .Plats__choix:hover, .Desserts__choix:hover{
-    background: linear-gradient(to right,#ffffff 80%, $color-tertiaire 80% 100%);
-    border-radius: 25px;
-    @include desktop {
-        background: linear-gradient(to right,transparent 80%, $color-tertiaire 80% 100%);
-        border:#99E2D0 1px solid;
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    &_2 {
+        animation: apparitions_succesives 2000ms 250ms ease-in-out;
     }
+}
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    &_3 {
+        animation: apparitions_succesives 3000ms 250ms ease-in-out;
+    }
+}
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    &_4 {
+        animation: apparitions_succesives 4000ms 250ms ease-in-out;
+    }
+}
+@keyframes apparitions_succesives {
+0% {
+    transform: translateY(10px);
+    opacity: 0;
+}
+100% {
+    transform: translateY(0px);
+    opacity: 1;
+}
 }
 .Entrees__choix-pas_prix, .Plats__choix-pas_prix, .Desserts__choix-pas_prix,.Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     margin: 5px 0px 5px 0px;
+    padding:10px 0px 10px 10px;
     @include tablette {
         display: flex;
         flex-direction: row;
@@ -725,9 +734,6 @@ $breakpoints__C: (
     font-weight: 700;
     font-size: 22px;
     margin: 5px 0px 5px 0px;
-    @include mobile-hauteur-pied_de_page {
-        font-size: 15px;
-    }
     @include tablette {
         padding: 0px 5px 0px 5px;
     }
@@ -735,47 +741,385 @@ $breakpoints__C: (
 .Entrees__choix-complement, .Plats__choix-complement, .Desserts__choix-complement {
     font-size: 20px;
     margin: 5px 0px 5px 0px;
-    @include mobile-hauteur-pied_de_page {
-        font-size: 15px;
-    }
 }
 .Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix{
     font-weight: 700;
+    min-width: 30px;
 }
 .prix {
-    margin: 5px 0px 5px 0px;
-    @include mobile-hauteur-pied_de_page {
-        font-size: 15px;
-    }
+    font-size: 20px;
+
     &__fantome {
         margin: 5px 0px 5px 0px;
-        color: transparent;
+        color: white;
+        height: 22px;
     }
+}
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    &_1, &_2, &_3, &_4{
+        &:active {
+            & > .coché_vert_menthe {
+                background-color: $color-tertiaire;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                min-width:20px;
+                border-radius: 0px 25px 25px 0px;
+                padding: 0px 30px 0px 30px;
+            }
+            & > .coché_vert_menthe {    
+                &-vrai {
+                    animation: l_amusante_rotation 500ms;
+                }
+            }
+        }
+    }
+}
+.coché_vert_menthe {    
+    &-vrai {
+        color: white;
+        scale: 2;
+        & i {
+        display: var(--fa-display,inline);
+        }
+    }
+}
+@keyframes l_amusante_rotation {
+    0% {
+        transform:rotate('270')
+    }
+    12% {
+        transform:rotate('180')
+    }
+    25% {
+        transform:rotate('135')
+    }
+    50% {
+        transform:rotate('90')
+    }
+    63% {
+        transform:rotate('66')
+    }
+    86% {
+        transform:rotate('33')
+    }
+    100% {
+        transform: rotate('360');
+    }
+}
+@keyframes translation_depuis_la_droite_magique {
+    0% {
+        transform-origin: 100%;
+    }
+    100% {
+        transform-origin: 50%;
+        transform: scaleX(1);
+    }
+}
+.coché_vert_menthe {
+    background-color: $color-tertiaire;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 0px 25px 25px 0px;
+    padding: 0px 40px 0px 40px;
+    display: none;
 }
 .menu__commander {
     box-shadow: 3px 3px darken($color-quatrieme, 5%), -3px 3px darken($color-quatrieme, 5%);
     background: linear-gradient(355deg, $color-primaire 12.5%,$color-secondaire); 
     @include padding-size(18px 60px 18px 60px);
     border-radius: 150px;
-    margin:0px 0px 15px 0px;
-    display: inline;
     color: white;
     font-size: 20px;
-    @include mobile-hauteur-pied_de_page {
-        font-size: 15px;
-    }
+    display: block;
 }
 .bouton-hover :hover{
     background: linear-gradient(355deg, lighten($color-primaire,5%) 12.5%,lighten($color-secondaire,5%));
     box-shadow: 6px 6px darken($color-quatrieme, 5%), -6px 6px darken($color-quatrieme, 5%);
+    border-radius: 150px;
 }
 .centpxbottom {
     padding: 50px 0px 62px 0px;
     @include desktop {
         padding: 0px 0px 0px 0px;
     }
-    @include mobile-commander {
-        padding: 10px 0px 10px 0px;
+}
+.menu-pied_de_page {
+    position: relative;
+    top:1925px; left:0px;
+    width: 100%;
+    @include desktop {
+        position: absolute;
+        top:738px; left:0;
+        padding: 40px 0px 41px 0px;
+    }
+    @include tablette {
+        position: absolute;
+        top:1625px; left:0;
+    }
+    color: #ffffff;
+    background-color: darken($color-quatrieme, 80%);
+    @include padding-size(0px 0px 40px 0px);
+    &-titre {
+    padding: 20px 0px 0px 0px;
+    @include desktop {
+        padding: 0px 0px 0px 0px;
+    }
+    }
+    &-lien {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding:0px 0px 0px 0px;
+    i {
+        margin: 0px 15px 0px 0px;
+    }
+    }
+}
+.surligner_a_moitie {
+    display: flex;
+    flex-direction: row;
+}
+.centrer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hauteur_130 {
+    margin: 40px 0px 40px 0px;
+}
+.corps-menu {
+    height:100%;
+    margin: 0px 0px 0px 0px;
+}
+.menu {
+    @include desktop {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+.menu_et_titre {
+    position: absolute;
+    top:350px; left:0;
+    border-radius: 50px 50px 0px 0px;
+    background-color: $color-quatrieme;
+    width:100%;
+    @include desktop {
+        background-color: transparent;
+        top:100px; left:0;
+    }
+}
+.menu__navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    &-fleche {
+        font-size: 12px;
+        position: absolute;
+        top: 38px; left: 20px;
+    }
+    &-logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    object-fit: cover;
+    height: 100px;
+    }
+}
+.menu__navigation-logo {
+    text-align: center;
+    scale: 0.5;
+}
+.menu__image img {
+    height: 300px;
+    width: 100%;
+    @include desktop {
+        height: 630px;
+     }   
+}
+.menu__image-enchantee img {
+    height: 300px;
+    width: 100%;
+    @include desktop {
+        height: 720px;
+     }   
+}
+.menu__image-enchantee {
+    position: relative;
+    top: 0px; left: 0px;
+    @include desktop {
+        opacity:50%;
+    }
+}
+.menu_et_image {
+    width:100%;
+}
+.menu__titre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    @include desktop {
+        color:black
+    }
+    @include padding-size(20px 0px 0px 0px);
+    &-texte {
+    font-size: 35px;
+    font-weight: 900;
+    }
+}
+.Entrees__titre, .Plats__titre, .Desserts__titre {
+    display: inline-block;
+    margin:40px 0px 0px 20px;
+    @include desktop {
+        color:black
+    }
+}
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    &_1, &_2, &_3, &_4 {
+        border-radius: 25px;
+        background-color: #ffffff;
+        @include desktop {
+            background-color: transparent;
+            color:black;
+            border: $color-primaire 1px solid;
+        }
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 20px 10px 0px 10px;
+    }
+}
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    &_1 {
+        animation: apparitions_succesives 1000ms 250ms ease-in-out;
+    }
+}
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    &_2 {
+        animation: apparitions_succesives 2000ms 250ms ease-in-out;
+    }
+}
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    &_3 {
+        animation: apparitions_succesives 3000ms 250ms ease-in-out;
+    }
+}
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    &_4 {
+        animation: apparitions_succesives 4000ms 250ms ease-in-out;
+    }
+}
+@keyframes apparitions_succesives {
+0% {
+    transform: translateY(10px);
+    opacity: 0;
+}
+100% {
+    transform: translateY(0px);
+    opacity: 1;
+}
+}
+.Entrees__choix-pas_prix, .Plats__choix-pas_prix, .Desserts__choix-pas_prix,.Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5px 0px 5px 0px;
+    padding:10px 0px 10px 10px;
+    @include tablette {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+.Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
+    font-weight: 700;
+    font-size: 22px;
+    margin: 5px 0px 5px 0px;
+    @include tablette {
+        padding: 0px 5px 0px 5px;
+    }
+}
+.Entrees__choix-complement, .Plats__choix-complement, .Desserts__choix-complement {
+    font-size: 20px;
+    margin: 5px 0px 5px 0px;
+}
+.Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix{
+    font-weight: 700;
+    min-width: 30px;
+}
+.prix {
+    font-size: 20px;
+    padding: 0px 15px 0px 0px;
+
+    &__fantome {
+        margin: 5px 0px 5px 0px;
+        color: white;
+        height: 22px;
+    }
+}
+.Entrees__choix, .Plats__choix, .Desserts__choix {
+    &_1, &_2, &_3, &_4{
+        &:hover {
+            & > .coché_vert_menthe {
+                background-color: $color-tertiaire;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                min-width:20px;
+                border-radius: 0px 25px 25px 0px;
+                padding: 0px 30px 0px 30px;
+                transform: scale(1);
+                transition: all 3s;
+            & > .coché_vert_menthe-vrai i {
+                    transform: rotate('01');
+                }
+            }
+        }
+    }
+}
+.coché_vert_menthe {    
+    &-vrai {
+        color: white;
+        scale: 2;
+        & i {
+        display: var(--fa-display,inline);
+        transform: rotate('180');
+        }
+    }
+}
+.coché_vert_menthe {
+    background-color: $color-tertiaire;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 0px 25px 25px 0px;
+    padding: 0px 40px 0px 40px;
+    transform:scale(0);
+}
+.menu__commander {
+    box-shadow: 3px 3px darken($color-quatrieme, 5%), -3px 3px darken($color-quatrieme, 5%);
+    background: linear-gradient(355deg, $color-primaire 12.5%,$color-secondaire); 
+    @include padding-size(18px 60px 18px 60px);
+    border-radius: 150px;
+    color: white;
+    font-size: 20px;
+    display: block;
+}
+.bouton-hover :hover{
+    background: linear-gradient(355deg, lighten($color-primaire,5%) 12.5%,lighten($color-secondaire,5%));
+    box-shadow: 6px 6px darken($color-quatrieme, 5%), -6px 6px darken($color-quatrieme, 5%);
+    border-radius: 150px;
+}
+.centpxbottom {
+    padding: 50px 0px 62px 0px;
+    @include desktop {
+        padding: 0px 0px 0px 0px;
     }
 }
 .menu-pied_de_page {
@@ -790,10 +1134,6 @@ $breakpoints__C: (
     @include tablette {
         position: absolute;
         top:1625px; left:0;
-    }
-    @include mobile_hauteur-pied_de_page {
-        position: absolute;
-        top: 1690px; left:0px;
     }
     color: #ffffff;
     background-color: darken($color-quatrieme, 80%);
@@ -816,7 +1156,7 @@ $breakpoints__C: (
 }
 .menu-pied_de_page-enchantee {
     position: absolute;
-    top:2000px; left:0px;
+    top:2050px; left:0px;
     width: 100%;
     @include desktop {
         position: absolute;
@@ -826,10 +1166,6 @@ $breakpoints__C: (
     @include tablette {
         position:absolute;
         top:1715px; left:0;
-    }
-    @include mobile_hauteur-pied_de_page {
-        position: absolute;
-        top: 1825px; left:0px;
     }
     color: #ffffff;
     background-color: darken($color-quatrieme, 80%);
