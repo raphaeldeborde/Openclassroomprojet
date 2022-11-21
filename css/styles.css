@@ -21,25 +21,12 @@
   animation: disparition-magique 850ms 150ms ease-in-out;
   animation-iteration-count: 3;
 }
-@media screen and (min-width: 1150px) {
-  .chargeur-rond {
-    top: 22%;
-    left: 33%;
-    transform-origin: 50% 50%;
-  }
-}
 
 .progression__disque {
   width: 100px;
   height: 100px;
   border-radius: 50%;
   background: linear-gradient(355deg, #ade8d9 12.5%, #ff93e1);
-}
-@media screen and (min-width: 1150px) {
-  .progression__disque {
-    width: 500px;
-    height: 500px;
-  }
 }
 
 @keyframes disparition-magique {
@@ -129,11 +116,6 @@
   object-fit: cover;
   height: 100px;
 }
-@media screen and (min-width: 1150px) {
-  .nav-logo {
-    scale: 0.25;
-  }
-}
 
 .barre_de_recherche {
   background-color: #d9d9d9;
@@ -157,32 +139,16 @@
   padding: 0px 0px 90px 0px;
   text-align: center;
 }
-@media screen and (min-width: 1150px) {
-  .nav-descriptif {
-    padding: 15px 0px 50px 0px;
-  }
-}
 .nav-titre {
   font-size: 24px;
   font-weight: 900;
   margin: 0px 0px 30px 0px;
   padding: 30px 0px 0px 0px;
 }
-@media screen and (min-width: 1150px) {
-  .nav-titre {
-    padding: 10px 0px 10px 0px;
-    margin: 10px 0px 10px 0px;
-  }
-}
 .nav-explication {
   font-size: 18px;
   margin: 0px 0px 60px 0px;
   padding: 10px 0px 10px 0px;
-}
-@media screen and (min-width: 1150px) {
-  .nav-explication {
-    margin: 0px 0px 20px 0px;
-  }
 }
 .nav-bouton {
   display: inline;
@@ -194,11 +160,6 @@
   background: linear-gradient(355deg, #9356DC 12.5%, #FF79DA);
   margin: 0px 0px 30px 0px;
 }
-@media screen and (min-width: 1150px) {
-  .nav-bouton {
-    margin: 0px 0px 0px 0px;
-  }
-}
 
 .explorer :hover {
   background: linear-gradient(355deg, #a16be0 12.5%, #ff93e1);
@@ -207,15 +168,6 @@
 
 .fonctionnement {
   padding: 50px 0px 50px 0px;
-}
-@media screen and (min-width: 1150px) {
-  .fonctionnement {
-    padding: 20px 0px 20px 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-  }
 }
 .fonctionnement-titre {
   font-size: 24px;
@@ -226,23 +178,6 @@
   list-style-type: none;
   margin: 0px 60px 0px 60px;
   padding-inline-start: 0px;
-}
-@media screen and (max-width: 365px) {
-  .fonctionnement ul {
-    margin: 0px 30px 0px 30px;
-  }
-}
-@media screen and (min-width: 1150px) {
-  .fonctionnement ul {
-    margin: 0px 15px 0px 15px;
-  }
-}
-@media screen and (min-width: 1150px) {
-  .fonctionnement-liste {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
 }
 .fonctionnement-liste :hover {
   background-color: #f2eafb;
@@ -255,11 +190,6 @@
   padding: 20px 0px 20px 0px;
   box-shadow: 4px 4px 4px #e5e5e5;
 }
-@media screen and (min-width: 1150px) {
-  .fonctionnement-liste__element {
-    margin: 0px 10px 0px 10px;
-  }
-}
 .fonctionnement-liste__element p {
   font-size: 15px;
   font-weight: 500;
@@ -268,16 +198,6 @@
 .fonctionnement_liste__titre {
   display: inline;
   margin: 0px 0px 0px 30px;
-}
-@media screen and (max-width: 500px) {
-  .fonctionnement_liste__titre {
-    margin: 0px 0px 0px 0px;
-  }
-}
-@media screen and (min-width: 1150px) {
-  .fonctionnement_liste__titre {
-    margin: 0px 10px 0px 0px;
-  }
 }
 
 .fonctionnement-liste__numero_element {
@@ -308,29 +228,12 @@
   background-color: #F2F2F2;
   padding: 50px 0px 50px 0px;
 }
-@media screen and (min-width: 1150px) {
-  .restaurants__et__titre {
-    padding: 15px 0px 0px 0px;
-  }
-}
 
 .restaurants {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-@media screen and (min-width: 650px) and (max-width: 1150px) {
-  .restaurants {
-    display: flex;
-    flex-direction: row;
-  }
-}
-@media screen and (min-width: 1150px) {
-  .restaurants {
-    display: flex;
-    flex-direction: row;
-  }
 }
 
 .deux_cartes_de_restaurants {
@@ -339,12 +242,6 @@
   justify-content: center;
   align-items: center;
   width: 97%;
-}
-@media screen and (min-width: 1150px) {
-  .deux_cartes_de_restaurants {
-    display: flex;
-    flex-direction: row;
-  }
 }
 
 .restaurants-titre {
@@ -362,19 +259,9 @@
   box-shadow: 2px 2px #e5e5e5, -2px 2px #e5e5e5;
   margin: 10px 0px 10px 0px;
 }
-@media screen and (min-width: 1150px) {
-  .restaurants-accroche {
-    margin: 10px;
-  }
-}
 .restaurants-accroche__titre {
   font-size: 20px;
   font-weight: 700;
-}
-@media screen and (min-width: 1150px) {
-  .restaurants-accroche__titre {
-    font-size: 15px;
-  }
 }
 .restaurants-accroche__texte {
   display: flex;
@@ -479,11 +366,6 @@
   flex-direction: column;
   justify-content: space-around;
 }
-@media screen and (min-width: 1150px) {
-  .menu {
-    flex-direction: row;
-  }
-}
 
 .menu_et_titre {
   position: absolute;
@@ -492,14 +374,6 @@
   border-radius: 50px 50px 0px 0px;
   background-color: #F2F2F2;
   width: 100%;
-}
-@media screen and (min-width: 1150px) {
-  .menu_et_titre {
-    background-color: transparent;
-    position: absolute;
-    top: 100px;
-    left: 0;
-  }
 }
 
 .menu__navigation {
@@ -531,20 +405,10 @@
   height: 300px;
   width: 100%;
 }
-@media screen and (min-width: 1150px) {
-  .menu__image img {
-    height: 630px;
-  }
-}
 
 .menu__image-enchantée img {
   height: 300px;
   width: 100%;
-}
-@media screen and (min-width: 1150px) {
-  .menu__image-enchantée img {
-    height: 635px;
-  }
 }
 
 .menu__image {
@@ -552,21 +416,11 @@
   top: 0px;
   left: 0px;
 }
-@media screen and (min-width: 1150px) {
-  .menu__image {
-    opacity: 50%;
-  }
-}
 
 .menu__image-enchantée {
   position: relative;
   top: 0px;
   left: 0px;
-}
-@media screen and (min-width: 1150px) {
-  .menu__image-enchantée {
-    opacity: 50%;
-  }
 }
 
 .menu_et_image {
@@ -581,30 +435,14 @@
   width: 100%;
   padding: 20px 0px 0px 0px;
 }
-@media screen and (min-width: 1150px) {
-  .menu__titre {
-    color: black;
-  }
-}
 .menu__titre-texte {
   font-size: 35px;
   font-weight: 900;
 }
 
-@media screen and (min-width: 1150px) {
-  .Entrees, .Plats, .Desserts {
-    width: 400px;
-  }
-}
-
 .Entrees__titre, .Plats__titre, .Desserts__titre {
   display: inline-block;
   margin: 40px 0px 0px 20px;
-}
-@media screen and (min-width: 1150px) {
-  .Entrees__titre, .Plats__titre, .Desserts__titre {
-    color: black;
-  }
 }
 
 .Entrees__choix_1, .Entrees__choix_2, .Entrees__choix_3, .Entrees__choix_4, .Plats__choix_1, .Plats__choix_2, .Plats__choix_3, .Plats__choix_4, .Desserts__choix_1, .Desserts__choix_2, .Desserts__choix_3, .Desserts__choix_4 {
@@ -614,13 +452,6 @@
   flex-direction: row;
   justify-content: space-between;
   margin: 20px 10px 0px 10px;
-}
-@media screen and (min-width: 1150px) {
-  .Entrees__choix_1, .Entrees__choix_2, .Entrees__choix_3, .Entrees__choix_4, .Plats__choix_1, .Plats__choix_2, .Plats__choix_3, .Plats__choix_4, .Desserts__choix_1, .Desserts__choix_2, .Desserts__choix_3, .Desserts__choix_4 {
-    background-color: transparent;
-    color: black;
-    border: #9356DC 1px solid;
-  }
 }
 
 .Entrees__choix_1, .Plats__choix_1, .Desserts__choix_1 {
@@ -656,23 +487,11 @@
   margin: 0px 0px 0px 0px;
   padding: 10px 0px 10px 10px;
 }
-@media screen and (min-width: 650px) and (max-width: 1150px) {
-  .Entrees__choix-pas_prix, .Plats__choix-pas_prix, .Desserts__choix-pas_prix, .Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-}
 
 .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
   font-weight: 700;
   font-size: 22px;
   margin: 5px 0px 5px 0px;
-}
-@media screen and (min-width: 650px) and (max-width: 1150px) {
-  .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
-    padding: 0px 5px 0px 5px;
-  }
 }
 
 .Entrees__choix-complement, .Plats__choix-complement, .Desserts__choix-complement {
@@ -761,22 +580,9 @@
 .centpxbottom {
   padding: 12px 0px 60px 0px;
 }
-@media screen and (min-width: 1150px) {
-  .centpxbottom {
-    padding: 0px 0px 0px 0px;
-  }
-}
 
 .menu-pied_de_page_et_lien {
   padding: 0px 0px 0px 10px;
-}
-@media screen and (min-width: 1150px) {
-  .menu-pied_de_page_et_lien {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-  }
 }
 
 .menu-pied_de_page {
@@ -788,28 +594,8 @@
   background-color: #262626;
   padding: 0px 0px 40px 0px;
 }
-@media screen and (min-width: 1150px) {
-  .menu-pied_de_page {
-    position: absolute;
-    top: 730px;
-    left: 0;
-    padding: 40px 0px 41px 0px;
-  }
-}
-@media screen and (min-width: 650px) and (max-width: 1150px) {
-  .menu-pied_de_page {
-    position: absolute;
-    top: 1625px;
-    left: 0;
-  }
-}
 .menu-pied_de_page-titre {
   padding: 20px 0px 0px 0px;
-}
-@media screen and (min-width: 1150px) {
-  .menu-pied_de_page-titre {
-    padding: 0px 0px 0px 0px;
-  }
 }
 .menu-pied_de_page-lien {
   display: flex;
@@ -830,19 +616,153 @@
   background-color: #262626;
   padding: 0px 0px 40px 0px;
 }
-@media screen and (min-width: 1150px) {
+
+@media screen and (min-width: 850px) and (max-width: 1150px) {
+  .restaurants {
+    display: flex;
+    flex-direction: row;
+  }
+  .Entrees__choix-pas_prix, .Plats__choix-pas_prix, .Desserts__choix-pas_prix, .Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
+    padding: 0px 5px 0px 5px;
+  }
+  .menu-pied_de_page {
+    position: absolute;
+    top: 1625px;
+    left: 0;
+  }
+  .menu-pied_de_page-enchantee {
+    position: absolute;
+    top: 1615px;
+    left: 0;
+  }
+}
+@media screen and (min-width: 1150px) and (max-width: 1920px) {
+  .chargeur-rond {
+    top: 22%;
+    left: 33%;
+    transform-origin: 50% 50%;
+  }
+  .progression__disque {
+    width: 500px;
+    height: 500px;
+  }
+  .nav-logo {
+    scale: 0.25;
+  }
+  .nav-descriptif {
+    padding: 15px 0px 50px 0px;
+  }
+  .nav-titre {
+    padding: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
+  }
+  .nav-explication {
+    margin: 0px 0px 20px 0px;
+  }
+  .nav-bouton {
+    margin: 0px 0px 0px 0px;
+  }
+  .fonctionnement {
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .fonctionnement ul {
+    margin: 0px 15px 0px 15px;
+  }
+  .fonctionnement-liste {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .fonctionnement-liste__element {
+    margin: 0px 10px 0px 10px;
+  }
+  .fonctionnement_liste__titre {
+    margin: 0px 10px 0px 0px;
+  }
+  .restaurants__et__titre {
+    padding: 15px 0px 0px 0px;
+  }
+  .restaurants {
+    display: flex;
+    flex-direction: row;
+  }
+  .deux_cartes_de_restaurants {
+    display: flex;
+    flex-direction: row;
+  }
+  .restaurants-accroche {
+    margin: 10px;
+  }
+  .restaurants__titre {
+    font-size: 15px;
+  }
+  .menu {
+    flex-direction: row;
+  }
+  .menu_et_titre {
+    background-color: transparent;
+    position: absolute;
+    top: 100px;
+    left: 0;
+  }
+  .menu__image img {
+    height: 630px;
+  }
+  .menu__image-enchantée img {
+    height: 635px;
+  }
+  .menu__image {
+    opacity: 50%;
+  }
+  .menu__titre {
+    color: black;
+  }
+  .Entrees, .Plats, .Desserts {
+    width: 400px;
+  }
+  .Entrees__titre, .Plats__titre, .Desserts__titre {
+    color: black;
+  }
+  .Entrees__choix_1, .Entrees__choix_2, .Entrees__choix_3, .Entrees__choix_4, .Plats__choix_1, .Plats__choix_2, .Plats__choix_3, .Plats__choix_4, .Desserts__choix_1, .Desserts__choix_2, .Desserts__choix_3, .Desserts__choix_4 {
+    background-color: transparent;
+    color: black;
+    border: #9356DC 1px solid;
+  }
+  .centpxbottom {
+    padding: 0px 0px 0px 0px;
+  }
+  .menu-pied_de_page_et_lien {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .menu-pied_de_page {
+    position: absolute;
+    top: 730px;
+    left: 0;
+    padding: 40px 0px 41px 0px;
+  }
+  .menu-pied_de_page-titre {
+    padding: 0px 0px 0px 0px;
+  }
   .menu-pied_de_page-enchantee {
     position: absolute;
     top: 830px;
     left: 0;
     padding: 5px 0px 5px 0px;
   }
-}
-@media screen and (min-width: 650px) and (max-width: 1150px) {
-  .menu-pied_de_page-enchantee {
-    position: absolute;
-    top: 1615px;
-    left: 0;
+  .menu__image-enchantée {
+    opacity: 50%;
   }
 }
 
