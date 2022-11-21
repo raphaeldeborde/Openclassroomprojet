@@ -2,69 +2,12 @@ $color-primaire: #9356DC;
 $color-secondaire: #FF79DA ;
 $color-tertiaire: #99E2D0;
 $color-quatrieme:#F2F2F2;
-$breakpoints__fonctionnement_ul: (
-    mobile__fonctionnement_ul:365px
-);
-$breakpoints__2:(
-    mobile-taille_2: 500px
-);
-$breakpoints__3:(
-    mobile-taille_3: 650px
-);
-$breakpoints__4: (
-    mobile-taille_4: 1000px
-);
-$breakpoints: (
-     desktop: 1150px
-);
-$breakpoints__B: (
-    desktop-2: 2000px
-);
-$breakpoints__C: (
-    desktop-3: 2500px
-);
-
 @font-face {
     font-family: Shrikhand;
     src: url('shrikhand.regular.ttf')
 }
 @mixin padding-size ($padding: 15px 30px 15px 0px) { 
     padding:$padding;
-    }
-@mixin mobile-fonctionnement_ul {
-    @media screen and (max-width: map-get($breakpoints__fonctionnement_ul, mobile__fonctionnement_ul)) {
-           @content;   
-    }
-}
-@mixin mobile-taille_1 {
-        @media screen and (max-width: map-get($breakpoints__2, mobile-taille_2)) {
-            @content;
-        }
-    }   
-@mixin mobile-taille_2 {
-        @media screen and (min-width: map-get($breakpoints__2, mobile-taille_2)) and (max-width:map-get($breakpoints__3, mobile-taille_3)) {
-            @content;
-        }
-    }
-@mixin mobile-taille_3 {
-        @media screen and (min-width: map-get($breakpoints__3, mobile-taille_3)) and (max-width:map-get($breakpoints__4, mobile-taille_4)) {
-            @content;
-        }
-    }
-@mixin mobile-taille_4 {
-        @media screen and (min-width: map-get($breakpoints__4, mobile-taille_4)) and (max-width:map-get($breakpoints, desktop)) {
-            @content;
-        }
-    }
-@mixin tablette {
-        @media screen and (min-width: map-get($breakpoints__3, mobile-taille_3)) and (max-width:map-get($breakpoints, desktop)) {
-            @content;
-        }
-    }       
-@mixin desktop {
-    @media screen and (min-width: map-get($breakpoints, desktop)) {
-        @content;
-    }
 }
 .chargeur {
     background-color: white;
@@ -79,19 +22,11 @@ $breakpoints__C: (
     position: inherit;
     top:40%; left:35%;
     transform-origin: 50% 50%;
-    @include desktop {
-        top:22%; left:33%;
-        transform-origin: 50% 50%;
-    }
     animation: disparition-magique 850ms 150ms ease-in-out;
     animation-iteration-count: 3;
 }
 .progression {
     &__disque {
-        @include desktop {
-            width: 500px;
-            height: 500px;
-        }
         width: 100px;
         height: 100px;
         border-radius: 50%;
@@ -171,9 +106,6 @@ $breakpoints__C: (
 .nav-logo {
     text-align: center;
     scale: 0.5;
-    @include desktop {
-        scale:0.25
-    }
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -199,28 +131,18 @@ $breakpoints__C: (
     &-descriptif {
     background-color: $color-quatrieme;
     @include padding-size(0px 0px 90px 0px);
-    @include desktop {
-        padding: 15px 0px 50px 0px;
-    }
     text-align: center;
     }
     &-titre {
     font-size: 24px;
     font-weight: 900;
     margin: 0px 0px 30px 0px;
-    @include desktop {
-        padding: 10px 0px 10px 0px;
-        margin: 10px 0px 10px 0px;
-    }
     @include padding-size(30px 0px 0px 0px);
     }
     &-explication {
     font-size:18px;
     margin:0px 0px 60px 0px;
     padding:10px 0px 10px 0px;
-    @include desktop {
-        margin: 0px 0px 20px 0px;
-    }
     }
     &-bouton {
     display: inline;
@@ -231,9 +153,6 @@ $breakpoints__C: (
     border-radius: 150px;
     background: linear-gradient(355deg, $color-primaire 12.5%,$color-secondaire);
     margin: 0px 0px 30px 0px;
-    @include desktop {
-        margin: 0px 0px 0px 0px;
-    }
     }
 }
 .explorer :hover {
@@ -242,13 +161,6 @@ $breakpoints__C: (
 }
 .fonctionnement {
     padding: 50px 0px 50px 0px;
-    @include desktop {
-        padding: 20px 0px 20px 0px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    }
     &-titre {
     font-size: 24px;
     padding-inline-start: 0px;
@@ -257,20 +169,9 @@ $breakpoints__C: (
     ul {
     list-style-type: none;
     margin: 0px 60px 0px 60px;
-    @include mobile-fonctionnement_ul {
-        margin: 0px 30px 0px 30px;
-    }
     padding-inline-start: 0px;
-    @include desktop {
-        margin:0px 15px 0px 15px;
-    }
     }
     &-liste {
-        @include desktop {
-            display:flex;
-            flex-direction: row;
-            justify-content: space-around;
-        }
         & :hover {
             background-color: lighten($color-primaire, 35%);
         }
@@ -281,9 +182,6 @@ $breakpoints__C: (
             margin: 30px 0px 30px 0px;
             @include padding-size(20px 0px 20px 0px);
             box-shadow: 4px 4px 4px darken($color-quatrieme,5%);
-            @include desktop {
-                margin: 0px 10px 0px 10px;
-            }
             p {
                 font-size: 15px;
                 font-weight: 500;
@@ -294,12 +192,6 @@ $breakpoints__C: (
 .fonctionnement_liste__titre {
     display: inline;
     margin: 0px 0px 0px 30px;
-    @include mobile-taille_1 {
-        margin:0px 0px 0px 0px;
-        }
-    @include desktop {
-        margin: 0px 10px 0px 0px;
-    }
 }
 .fonctionnement-liste__numero_element {
     display: inline;
@@ -325,23 +217,12 @@ $breakpoints__C: (
     flex-direction: column;
     background-color: $color-quatrieme;
     padding:50px 0px 50px 0px;
-    @include desktop {
-        padding: 15px 0px 0px 0px;
-    }
 }
 .restaurants {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    @include tablette {
-        display:flex;
-        flex-direction: row;
-    }
-    @include desktop {
-        display:flex;
-        flex-direction: row;
-    }
 }
 .deux_cartes_de_restaurants {
     display: flex;
@@ -349,10 +230,6 @@ $breakpoints__C: (
     justify-content: center;
     align-items: center;
     width: 97%;
-    @include desktop {
-        display: flex;
-        flex-direction: row;
-    }
 }
 .restaurants {
     &-titre {
@@ -369,15 +246,9 @@ $breakpoints__C: (
         background-color: #ffffff;
         box-shadow: 2px 2px darken($color-quatrieme,5%), -2px 2px darken($color-quatrieme,5%);
         margin: 10px 0px 10px 0px;
-        @include desktop {
-            margin: 10px;
-        }
         &__titre {
             font-size: 20px;
             font-weight:700;
-            @include desktop {
-                font-size: 15px;
-            }
         }
         &__texte {
             display: flex;
@@ -478,9 +349,6 @@ $breakpoints__C: (
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    @include desktop {
-        flex-direction: row;
-    }
 }
 .menu_et_titre {
     position: absolute;
@@ -488,11 +356,6 @@ $breakpoints__C: (
     border-radius: 50px 50px 0px 0px;
     background-color: $color-quatrieme;
     width:100%;
-    @include desktop {
-        background-color: transparent;
-        position: absolute;
-        top:100px; left:0;
-    }
 }
 .menu__navigation {
     display: flex;
@@ -518,31 +381,19 @@ $breakpoints__C: (
 }
 .menu__image img {
     height: 300px;
-    width: 100%;
-    @include desktop {
-        height: 630px;
-     }   
+    width: 100%;   
 }
 .menu__image-enchantée img {
     height: 300px;
     width: 100%;
-    @include desktop {
-        height: 635px;
-     }   
 }
 .menu__image {
     position: relative;
     top: 0px; left: 0px;
-    @include desktop {
-        opacity:50%;
-    }
 }
 .menu__image-enchantée {
     position: relative;
     top: 0px; left: 0px;
-    @include desktop {
-        opacity:50%;
-    }
 }
 .menu_et_image {
     width:100%;
@@ -553,36 +404,20 @@ $breakpoints__C: (
     justify-content: space-around;
     align-items: center;
     width:100%;
-    @include desktop {
-        color:black
-    }
     @include padding-size(20px 0px 0px 0px);
     &-texte {
     font-size: 35px;
     font-weight: 900;
     }
 }
-.Entrees, .Plats, .Desserts {
-    @include desktop {
-        width: 400px;
-    }
-}
 .Entrees__titre, .Plats__titre, .Desserts__titre {
     display: inline-block;
     margin:40px 0px 0px 20px;
-    @include desktop {
-        color:black
-    }
 }
 .Entrees__choix, .Plats__choix, .Desserts__choix {
     &_1, &_2, &_3, &_4 {
         border-radius: 15px;
         background-color: #ffffff;
-        @include desktop {
-            background-color: transparent;
-            color:black;
-            border: $color-primaire 1px solid;
-        }
         display:flex;
         flex-direction: row;
         justify-content: space-between;
@@ -625,19 +460,11 @@ $breakpoints__C: (
     justify-content: space-around;
     margin: 0px 0px 0px 0px;
     padding:10px 0px 10px 10px;
-    @include tablette {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-    }
 }
 .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
     font-weight: 700;
     font-size: 22px;
     margin: 5px 0px 5px 0px;
-    @include tablette {
-        padding: 0px 5px 0px 5px;
-    }
 }
 .Entrees__choix-complement, .Plats__choix-complement, .Desserts__choix-complement {
     font-size: 20px;
@@ -723,40 +550,19 @@ $breakpoints__C: (
 }
 .centpxbottom {
     padding: 12px 0px 60px 0px;
-    @include desktop {
-        padding: 0px 0px 0px 0px;
-    }
 }
 .menu-pied_de_page_et_lien {
     padding: 0px 0px 0px 10px;
-    @include desktop {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-    }
 }
 .menu-pied_de_page {
     position: relative;
     top:1442px; left:0px;
     width: 100%;
-    @include desktop {
-        position: absolute;
-        top:730px; left:0;
-        padding: 40px 0px 41px 0px;
-    }
-    @include tablette {
-        position: absolute;
-        top:1625px; left:0;
-    }
     color: #ffffff;
     background-color: darken($color-quatrieme, 80%);
     @include padding-size(0px 0px 40px 0px);
     &-titre {
-    padding: 20px 0px 0px 0px;
-    @include desktop {
-        padding: 0px 0px 0px 0px;
-    }
+        padding: 20px 0px 0px 0px;
     }
     &-lien {
     display: flex;
@@ -772,16 +578,157 @@ $breakpoints__C: (
     position: absolute;
     top:1950px; left:0px;
     width: 100%;
-    @include desktop {
+    color: #ffffff;
+    background-color: darken($color-quatrieme, 80%);
+    @include padding-size(0px 0px 40px 0px);
+}
+@media screen and (min-width: 850px) and (max-width: 1150px) {
+    .restaurants {
+        display:flex;
+        flex-direction: row;
+    }
+    .Entrees__choix-pas_prix, .Plats__choix-pas_prix, .Desserts__choix-pas_prix,.Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
+         padding: 0px 5px 0px 5px;
+    }
+    .menu-pied_de_page {
+        position: absolute;
+        top:1625px; left:0;
+    }
+    .menu-pied_de_page-enchantee {
+        position:absolute;
+        top:1615px; left:0;
+    }
+}
+@media screen and (min-width: 1150px) and (max-width: 1920px) {
+    .chargeur-rond {
+        top:22%; left:33%;
+        transform-origin: 50% 50%;
+    }
+    .progression {
+        &__disque {
+                width: 500px;
+                height: 500px;
+        }
+    }
+    .nav-logo {
+            scale:0.25 
+    }
+    .nav {
+        &-descriptif {
+            padding: 15px 0px 50px 0px;
+            }
+        &-titre {
+            padding: 10px 0px 10px 0px;
+            margin: 10px 0px 10px 0px;
+            }
+        &-explication {
+            margin: 0px 0px 20px 0px;
+        }
+        &-bouton {
+            margin: 0px 0px 0px 0px;
+        }
+    }
+    .fonctionnement {
+        padding: 20px 0px 20px 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        ul {
+            margin:0px 15px 0px 15px;
+        }
+        &-liste {
+            display:flex;
+            flex-direction: row;
+            justify-content: space-around;
+            &__element {
+                margin: 0px 10px 0px 10px;
+            }
+        }
+    }
+    .fonctionnement_liste__titre {
+        margin: 0px 10px 0px 0px;
+    }
+    .restaurants__et__titre {
+        padding: 15px 0px 0px 0px;
+    }
+    .restaurants {
+        display:flex;
+        flex-direction: row;
+    }
+    .deux_cartes_de_restaurants {
+        display: flex;
+        flex-direction: row;
+    }
+    .restaurants {
+        &-accroche {
+                margin: 10px;
+            }
+            &__titre {
+                font-size: 15px;
+        }
+    }
+    .menu {
+        flex-direction: row;
+    }
+    .menu_et_titre {
+        background-color: transparent;
+        position: absolute;
+        top:100px; left:0;
+    }
+    .menu__image img {
+        height: 630px;
+    }
+    .menu__image-enchantée img {
+        height: 635px;
+    }
+    .menu__image {
+        opacity:50%;
+    }
+    .menu__titre {
+        color:black
+    }
+    .Entrees, .Plats, .Desserts {
+        width: 400px;
+    }
+    .Entrees__titre, .Plats__titre, .Desserts__titre {
+        color:black
+    }
+    .Entrees__choix, .Plats__choix, .Desserts__choix {
+        &_1, &_2, &_3, &_4 {
+            background-color: transparent;
+            color:black;
+            border: $color-primaire 1px solid;
+        }
+    }
+    .centpxbottom {
+        padding: 0px 0px 0px 0px;
+    }
+    .menu-pied_de_page_et_lien {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .menu-pied_de_page {
+        position: absolute;
+        top:730px; left:0;
+        padding: 40px 0px 41px 0px;
+        &-titre {
+            padding: 0px 0px 0px 0px;
+        }
+    }
+    .menu-pied_de_page-enchantee {
         position: absolute;
         top:830px; left:0;
         padding: 5px 0px 5px 0px;
     }
-    @include tablette {
-        position:absolute;
-        top:1615px; left:0;
+    .menu__image-enchantée {
+        opacity:50%;
     }
-    color: #ffffff;
-    background-color: darken($color-quatrieme, 80%);
-    @include padding-size(0px 0px 40px 0px);
 }
