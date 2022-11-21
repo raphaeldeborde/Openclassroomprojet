@@ -823,7 +823,7 @@
 
 .menu-pied_de_page-enchantee {
   position: absolute;
-  top: 1962px;
+  top: 1950px;
   left: 0px;
   width: 100%;
   color: #ffffff;
@@ -841,7 +841,7 @@
 @media screen and (min-width: 650px) and (max-width: 1150px) {
   .menu-pied_de_page-enchantee {
     position: absolute;
-    top: 1715px;
+    top: 1615px;
     left: 0;
   }
 }

@@ -770,7 +770,7 @@ $breakpoints__C: (
 }
 .menu-pied_de_page-enchantee {
     position: absolute;
-    top:1962px; left:0px;
+    top:1950px; left:0px;
     width: 100%;
     @include desktop {
         position: absolute;
@@ -779,7 +779,7 @@ $breakpoints__C: (
     }
     @include tablette {
         position:absolute;
-        top:1715px; left:0;
+        top:1615px; left:0;
     }
     color: #ffffff;
     background-color: darken($color-quatrieme, 80%);
