@@ -735,6 +735,12 @@
   .centpxbottom {
     padding: 0px 0px 0px 0px;
   }
+  .pied_de_page-titre_et_lien {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
   .menu-pied_de_page_et_lien {
     display: flex;
     flex-direction: row;
