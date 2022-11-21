@@ -15,18 +15,31 @@
 
 .chargeur-rond {
   position: inherit;
-  top: 22%;
-  left: 33%;
+  top: 40%;
+  left: 35%;
   transform-origin: 50% 50%;
   animation: disparition-magique 850ms 150ms ease-in-out;
   animation-iteration-count: 3;
 }
+@media screen and (min-width: 1150px) {
+  .chargeur-rond {
+    top: 22%;
+    left: 33%;
+    transform-origin: 50% 50%;
+  }
+}
 
 .progression__disque {
-  width: 500px;
-  height: 500px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   background: linear-gradient(355deg, #ade8d9 12.5%, #ff93e1);
+}
+@media screen and (min-width: 1150px) {
+  .progression__disque {
+    width: 500px;
+    height: 500px;
+  }
 }
 
 @keyframes disparition-magique {
@@ -116,7 +129,7 @@
   object-fit: cover;
   height: 100px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .nav-logo {
     scale: 0.25;
   }
@@ -144,7 +157,7 @@
   padding: 0px 0px 90px 0px;
   text-align: center;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .nav-descriptif {
     padding: 15px 0px 50px 0px;
   }
@@ -155,7 +168,7 @@
   margin: 0px 0px 30px 0px;
   padding: 30px 0px 0px 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .nav-titre {
     padding: 10px 0px 10px 0px;
     margin: 10px 0px 10px 0px;
@@ -166,7 +179,7 @@
   margin: 0px 0px 60px 0px;
   padding: 10px 0px 10px 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .nav-explication {
     margin: 0px 0px 20px 0px;
   }
@@ -181,7 +194,7 @@
   background: linear-gradient(355deg, #9356DC 12.5%, #FF79DA);
   margin: 0px 0px 30px 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .nav-bouton {
     margin: 0px 0px 0px 0px;
   }
@@ -195,7 +208,7 @@
 .fonctionnement {
   padding: 50px 0px 50px 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .fonctionnement {
     padding: 20px 0px 20px 0px;
     display: flex;
@@ -219,12 +232,12 @@
     margin: 0px 30px 0px 30px;
   }
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .fonctionnement ul {
     margin: 0px 15px 0px 15px;
   }
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .fonctionnement-liste {
     display: flex;
     flex-direction: row;
@@ -242,7 +255,7 @@
   padding: 20px 0px 20px 0px;
   box-shadow: 4px 4px 4px #e5e5e5;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .fonctionnement-liste__element {
     margin: 0px 10px 0px 10px;
   }
@@ -261,7 +274,7 @@
     margin: 0px 0px 0px 0px;
   }
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .fonctionnement_liste__titre {
     margin: 0px 10px 0px 0px;
   }
@@ -295,7 +308,7 @@
   background-color: #F2F2F2;
   padding: 50px 0px 50px 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .restaurants__et__titre {
     padding: 15px 0px 0px 0px;
   }
@@ -313,7 +326,7 @@
     flex-direction: row;
   }
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .restaurants {
     display: flex;
     flex-direction: row;
@@ -327,7 +340,7 @@
   align-items: center;
   width: 97%;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .deux_cartes_de_restaurants {
     display: flex;
     flex-direction: row;
@@ -349,7 +362,7 @@
   box-shadow: 2px 2px #e5e5e5, -2px 2px #e5e5e5;
   margin: 10px 0px 10px 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .restaurants-accroche {
     margin: 10px;
   }
@@ -358,7 +371,7 @@
   font-size: 20px;
   font-weight: 700;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .restaurants-accroche__titre {
     font-size: 15px;
   }
@@ -460,11 +473,15 @@
   margin: 0px 0px 0px 0px;
 }
 
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+.menu {
+  padding: 0px 0px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+@media screen and (min-width: 1150px) {
   .menu {
-    display: flex;
     flex-direction: row;
-    justify-content: space-around;
   }
 }
 
@@ -476,7 +493,7 @@
   background-color: #F2F2F2;
   width: 100%;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .menu_et_titre {
     background-color: transparent;
     position: absolute;
@@ -514,7 +531,7 @@
   height: 300px;
   width: 100%;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .menu__image img {
     height: 630px;
   }
@@ -524,9 +541,9 @@
   height: 300px;
   width: 100%;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .menu__image-enchantée img {
-    height: 650px;
+    height: 635px;
   }
 }
 
@@ -535,7 +552,7 @@
   top: 0px;
   left: 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .menu__image {
     opacity: 50%;
   }
@@ -546,7 +563,7 @@
   top: 0px;
   left: 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .menu__image-enchantée {
     opacity: 50%;
   }
@@ -564,7 +581,7 @@
   width: 100%;
   padding: 20px 0px 0px 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .menu__titre {
     color: black;
   }
@@ -574,7 +591,7 @@
   font-weight: 900;
 }
 
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .Entrees, .Plats, .Desserts {
     width: 400px;
   }
@@ -584,21 +601,21 @@
   display: inline-block;
   margin: 40px 0px 0px 20px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .Entrees__titre, .Plats__titre, .Desserts__titre {
     color: black;
   }
 }
 
 .Entrees__choix_1, .Entrees__choix_2, .Entrees__choix_3, .Entrees__choix_4, .Plats__choix_1, .Plats__choix_2, .Plats__choix_3, .Plats__choix_4, .Desserts__choix_1, .Desserts__choix_2, .Desserts__choix_3, .Desserts__choix_4 {
-  border-radius: 25px;
+  border-radius: 15px;
   background-color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 20px 10px 0px 10px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .Entrees__choix_1, .Entrees__choix_2, .Entrees__choix_3, .Entrees__choix_4, .Plats__choix_1, .Plats__choix_2, .Plats__choix_3, .Plats__choix_4, .Desserts__choix_1, .Desserts__choix_2, .Desserts__choix_3, .Desserts__choix_4 {
     background-color: transparent;
     color: black;
@@ -636,7 +653,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  margin: 5px 0px 5px 0px;
+  margin: 0px 0px 0px 0px;
   padding: 10px 0px 10px 10px;
 }
 @media screen and (min-width: 650px) and (max-width: 1150px) {
@@ -663,6 +680,12 @@
   margin: 5px 0px 5px 0px;
 }
 
+.Entrees__choix-prix_et_coché, .Plats__choix-prix_et_coché, .Desserts__choix-prix_et_coché {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 .Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix {
   font-weight: 700;
   min-width: 30px;
@@ -670,6 +693,7 @@
 
 .prix {
   font-size: 20px;
+  margin: 5px 0px 5px 0px;
 }
 .prix__fantome {
   margin: 5px 0px 5px 0px;
@@ -683,7 +707,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 0px 25px 25px 0px;
+  border-radius: 0px 15px 15px 0px;
+  margin: 0px 0px 0px 10px;
   width: 0;
   overflow: hidden;
   transform: scaleX(0);
@@ -698,21 +723,23 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  transform: rotate(1turn);
   transform: rotate(0deg);
 }
 
-.Entrees__choix_1:hover > .coché_vert_menthe, .Entrees__choix_2:hover > .coché_vert_menthe, .Entrees__choix_3:hover > .coché_vert_menthe, .Entrees__choix_4:hover > .coché_vert_menthe, .Plats__choix_1:hover > .coché_vert_menthe, .Plats__choix_2:hover > .coché_vert_menthe, .Plats__choix_3:hover > .coché_vert_menthe, .Plats__choix_4:hover > .coché_vert_menthe, .Desserts__choix_1:hover > .coché_vert_menthe, .Desserts__choix_2:hover > .coché_vert_menthe, .Desserts__choix_3:hover > .coché_vert_menthe, .Desserts__choix_4:hover > .coché_vert_menthe {
+.Entrees__choix_1:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Entrees__choix_1:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Entrees__choix_1:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe, .Entrees__choix_2:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Entrees__choix_2:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Entrees__choix_2:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe, .Entrees__choix_3:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Entrees__choix_3:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Entrees__choix_3:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe, .Entrees__choix_4:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Entrees__choix_4:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Entrees__choix_4:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_1:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_1:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_1:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_2:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_2:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_2:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_3:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_3:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_3:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_4:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_4:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Plats__choix_4:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_1:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_1:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_1:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_2:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_2:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_2:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_3:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_3:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_3:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_4:hover > .Entrees__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_4:hover .Plats__choix-prix_et_coché > .coché_vert_menthe, .Desserts__choix_4:hover .Desserts__choix-prix_et_coché > .coché_vert_menthe {
   background-color: #99E2D0;
-  border-radius: 0px 25px 25px 0px;
+  border-radius: 0px 15px 15px 0px;
   padding: 0px 30px 0px 30px;
   transform-origin: right;
   transform: scaleX(1);
   transition: all 350ms;
 }
-.Entrees__choix_1:hover > .fa-circle-check, .Entrees__choix_2:hover > .fa-circle-check, .Entrees__choix_3:hover > .fa-circle-check, .Entrees__choix_4:hover > .fa-circle-check, .Plats__choix_1:hover > .fa-circle-check, .Plats__choix_2:hover > .fa-circle-check, .Plats__choix_3:hover > .fa-circle-check, .Plats__choix_4:hover > .fa-circle-check, .Desserts__choix_1:hover > .fa-circle-check, .Desserts__choix_2:hover > .fa-circle-check, .Desserts__choix_3:hover > .fa-circle-check, .Desserts__choix_4:hover > .fa-circle-check {
-  transform: rotate(360deg);
-  transition: all 350ms 100ms;
+.Entrees__choix_1:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Entrees__choix_1:hover .Plats__choix-prix_et_coché .fa-circle-check, .Entrees__choix_1:hover .Desserts__choix-prix_et_coché .fa-circle-check, .Entrees__choix_2:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Entrees__choix_2:hover .Plats__choix-prix_et_coché .fa-circle-check, .Entrees__choix_2:hover .Desserts__choix-prix_et_coché .fa-circle-check, .Entrees__choix_3:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Entrees__choix_3:hover .Plats__choix-prix_et_coché .fa-circle-check, .Entrees__choix_3:hover .Desserts__choix-prix_et_coché .fa-circle-check, .Entrees__choix_4:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Entrees__choix_4:hover .Plats__choix-prix_et_coché .fa-circle-check, .Entrees__choix_4:hover .Desserts__choix-prix_et_coché .fa-circle-check, .Plats__choix_1:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Plats__choix_1:hover .Plats__choix-prix_et_coché .fa-circle-check, .Plats__choix_1:hover .Desserts__choix-prix_et_coché .fa-circle-check, .Plats__choix_2:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Plats__choix_2:hover .Plats__choix-prix_et_coché .fa-circle-check, .Plats__choix_2:hover .Desserts__choix-prix_et_coché .fa-circle-check, .Plats__choix_3:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Plats__choix_3:hover .Plats__choix-prix_et_coché .fa-circle-check, .Plats__choix_3:hover .Desserts__choix-prix_et_coché .fa-circle-check, .Plats__choix_4:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Plats__choix_4:hover .Plats__choix-prix_et_coché .fa-circle-check, .Plats__choix_4:hover .Desserts__choix-prix_et_coché .fa-circle-check, .Desserts__choix_1:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Desserts__choix_1:hover .Plats__choix-prix_et_coché .fa-circle-check, .Desserts__choix_1:hover .Desserts__choix-prix_et_coché .fa-circle-check, .Desserts__choix_2:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Desserts__choix_2:hover .Plats__choix-prix_et_coché .fa-circle-check, .Desserts__choix_2:hover .Desserts__choix-prix_et_coché .fa-circle-check, .Desserts__choix_3:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Desserts__choix_3:hover .Plats__choix-prix_et_coché .fa-circle-check, .Desserts__choix_3:hover .Desserts__choix-prix_et_coché .fa-circle-check, .Desserts__choix_4:hover > .Entrees__choix-prix_et_coché .fa-circle-check, .Desserts__choix_4:hover .Plats__choix-prix_et_coché .fa-circle-check, .Desserts__choix_4:hover .Desserts__choix-prix_et_coché .fa-circle-check {
+  transform: rotate(-720deg);
+  transition: all 350ms;
+}
+.Entrees__choix_1:hover > .Entrees__choix-prix_et_coché > .prix, .Entrees__choix_1:hover .Plats__choix-prix_et_coché > .prix, .Entrees__choix_1:hover .Desserts__choix-prix_et_coché > .prix, .Entrees__choix_2:hover > .Entrees__choix-prix_et_coché > .prix, .Entrees__choix_2:hover .Plats__choix-prix_et_coché > .prix, .Entrees__choix_2:hover .Desserts__choix-prix_et_coché > .prix, .Entrees__choix_3:hover > .Entrees__choix-prix_et_coché > .prix, .Entrees__choix_3:hover .Plats__choix-prix_et_coché > .prix, .Entrees__choix_3:hover .Desserts__choix-prix_et_coché > .prix, .Entrees__choix_4:hover > .Entrees__choix-prix_et_coché > .prix, .Entrees__choix_4:hover .Plats__choix-prix_et_coché > .prix, .Entrees__choix_4:hover .Desserts__choix-prix_et_coché > .prix, .Plats__choix_1:hover > .Entrees__choix-prix_et_coché > .prix, .Plats__choix_1:hover .Plats__choix-prix_et_coché > .prix, .Plats__choix_1:hover .Desserts__choix-prix_et_coché > .prix, .Plats__choix_2:hover > .Entrees__choix-prix_et_coché > .prix, .Plats__choix_2:hover .Plats__choix-prix_et_coché > .prix, .Plats__choix_2:hover .Desserts__choix-prix_et_coché > .prix, .Plats__choix_3:hover > .Entrees__choix-prix_et_coché > .prix, .Plats__choix_3:hover .Plats__choix-prix_et_coché > .prix, .Plats__choix_3:hover .Desserts__choix-prix_et_coché > .prix, .Plats__choix_4:hover > .Entrees__choix-prix_et_coché > .prix, .Plats__choix_4:hover .Plats__choix-prix_et_coché > .prix, .Plats__choix_4:hover .Desserts__choix-prix_et_coché > .prix, .Desserts__choix_1:hover > .Entrees__choix-prix_et_coché > .prix, .Desserts__choix_1:hover .Plats__choix-prix_et_coché > .prix, .Desserts__choix_1:hover .Desserts__choix-prix_et_coché > .prix, .Desserts__choix_2:hover > .Entrees__choix-prix_et_coché > .prix, .Desserts__choix_2:hover .Plats__choix-prix_et_coché > .prix, .Desserts__choix_2:hover .Desserts__choix-prix_et_coché > .prix, .Desserts__choix_3:hover > .Entrees__choix-prix_et_coché > .prix, .Desserts__choix_3:hover .Plats__choix-prix_et_coché > .prix, .Desserts__choix_3:hover .Desserts__choix-prix_et_coché > .prix, .Desserts__choix_4:hover > .Entrees__choix-prix_et_coché > .prix, .Desserts__choix_4:hover .Plats__choix-prix_et_coché > .prix, .Desserts__choix_4:hover .Desserts__choix-prix_et_coché > .prix {
+  padding: 0px 10px 0px 0px;
 }
 
 .menu__commander {
@@ -732,9 +759,9 @@
 }
 
 .centpxbottom {
-  padding: 50px 0px 62px 0px;
+  padding: 12px 0px 60px 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .centpxbottom {
     padding: 0px 0px 0px 0px;
   }
@@ -743,7 +770,7 @@
 .menu-pied_de_page_et_lien {
   padding: 0px 0px 0px 10px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .menu-pied_de_page_et_lien {
     display: flex;
     flex-direction: row;
@@ -754,17 +781,17 @@
 
 .menu-pied_de_page {
   position: relative;
-  top: 1925px;
+  top: 1442px;
   left: 0px;
   width: 100%;
   color: #ffffff;
   background-color: #262626;
   padding: 0px 0px 40px 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .menu-pied_de_page {
     position: absolute;
-    top: 738px;
+    top: 730px;
     left: 0;
     padding: 40px 0px 41px 0px;
   }
@@ -779,7 +806,7 @@
 .menu-pied_de_page-titre {
   padding: 20px 0px 0px 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .menu-pied_de_page-titre {
     padding: 0px 0px 0px 0px;
   }
@@ -796,17 +823,17 @@
 
 .menu-pied_de_page-enchantee {
   position: absolute;
-  top: 2050px;
+  top: 1962px;
   left: 0px;
   width: 100%;
   color: #ffffff;
   background-color: #262626;
   padding: 0px 0px 40px 0px;
 }
-@media screen and (min-width: 1150px) and (max-width: 2000px) {
+@media screen and (min-width: 1150px) {
   .menu-pied_de_page-enchantee {
     position: absolute;
-    top: 845px;
+    top: 830px;
     left: 0;
     padding: 5px 0px 5px 0px;
   }

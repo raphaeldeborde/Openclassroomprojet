@@ -62,12 +62,7 @@ $breakpoints__C: (
         }
     }       
 @mixin desktop {
-    @media screen and (min-width: map-get($breakpoints, desktop)) and (max-width:map-get($breakpoints__B, desktop-2)) {
-        @content;
-    }
-}
-@mixin desktop-2 {
-    @media screen and (min-width: map-get($breakpoints__B, desktop-2)) and (max-width:map-get($breakpoints__C, desktop-3)) {
+    @media screen and (min-width: map-get($breakpoints, desktop)) {
         @content;
     }
 }
@@ -82,15 +77,23 @@ $breakpoints__C: (
 }
 .chargeur-rond {
     position: inherit;
-    top:22%; left:33%;
+    top:40%; left:35%;
     transform-origin: 50% 50%;
+    @include desktop {
+        top:22%; left:33%;
+        transform-origin: 50% 50%;
+    }
     animation: disparition-magique 850ms 150ms ease-in-out;
-    animation-iteration-count: 3; 
+    animation-iteration-count: 3;
 }
 .progression {
     &__disque {
-        width: 500px;
-        height: 500px;
+        @include desktop {
+            width: 500px;
+            height: 500px;
+        }
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         background: linear-gradient(355deg, lighten($color-tertiaire,5%) 12.5%,lighten($color-secondaire,5%));
     }
@@ -471,10 +474,12 @@ $breakpoints__C: (
     margin: 0px 0px 0px 0px;
 }
 .menu {
+    padding: 0px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     @include desktop {
-        display: flex;
         flex-direction: row;
-        justify-content: space-around;
     }
 }
 .menu_et_titre {
@@ -522,7 +527,7 @@ $breakpoints__C: (
     height: 300px;
     width: 100%;
     @include desktop {
-        height: 650px;
+        height: 635px;
      }   
 }
 .menu__image {
@@ -571,7 +576,7 @@ $breakpoints__C: (
 }
 .Entrees__choix, .Plats__choix, .Desserts__choix {
     &_1, &_2, &_3, &_4 {
-        border-radius: 25px;
+        border-radius: 15px;
         background-color: #ffffff;
         @include desktop {
             background-color: transparent;
@@ -618,7 +623,7 @@ $breakpoints__C: (
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 5px 0px 5px 0px;
+    margin: 0px 0px 0px 0px;
     padding:10px 0px 10px 10px;
     @include tablette {
         display: flex;
@@ -638,13 +643,18 @@ $breakpoints__C: (
     font-size: 20px;
     margin: 5px 0px 5px 0px;
 }
+.Entrees__choix-prix_et_coché, .Plats__choix-prix_et_coché, .Desserts__choix-prix_et_coché {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 .Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix{
     font-weight: 700;
     min-width: 30px;
 }
 .prix {
     font-size: 20px;
-
+    margin: 5px 0px 5px 0px;
     &__fantome {
         margin: 5px 0px 5px 0px;
         color: white;
@@ -657,7 +667,8 @@ $breakpoints__C: (
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 0px 25px 25px 0px;
+    border-radius: 0px 15px 15px 0px;
+    margin: 0px 0px 0px 10px;
     width:0;
     overflow: hidden;
     transform: scaleX(0);
@@ -671,24 +682,28 @@ $breakpoints__C: (
     text-align: center;
     align-items: center;
     justify-content: center;
-    transform: rotate(1turn);
     transform: rotate(0deg);
 }
 .Entrees__choix, .Plats__choix, .Desserts__choix {
     &_1, &_2, &_3, &_4{
         &:hover {
-            & > .coché_vert_menthe {
-                background-color: $color-tertiaire;
-                border-radius: 0px 25px 25px 0px;
-                padding: 0px 30px 0px 30px;
-                transform-origin: right;
-                transform: scaleX(1);
-                transition: all 350ms;
+            & > .Entrees__choix-prix_et_coché, .Plats__choix-prix_et_coché, .Desserts__choix-prix_et_coché {
+                & > .coché_vert_menthe {
+                    background-color: $color-tertiaire;
+                    border-radius: 0px 15px 15px 0px;
+                    padding: 0px 30px 0px 30px;
+                    transform-origin: right;
+                    transform: scaleX(1);
+                    transition: all 350ms;
+                }
+                & .fa-circle-check {
+                    transform: rotate(-720deg);
+                    transition: all 350ms;
+                }
+                & > .prix {
+                    padding: 0px 10px 0px 0px;
+                }
             }
-            & > .fa-circle-check {
-                transform: rotate(360deg);
-                transition: all 350ms 100ms;
-            }   
         }
     }
 }
@@ -707,7 +722,7 @@ $breakpoints__C: (
     border-radius: 150px;
 }
 .centpxbottom {
-    padding: 50px 0px 62px 0px;
+    padding: 12px 0px 60px 0px;
     @include desktop {
         padding: 0px 0px 0px 0px;
     }
@@ -723,11 +738,11 @@ $breakpoints__C: (
 }
 .menu-pied_de_page {
     position: relative;
-    top:1925px; left:0px;
+    top:1442px; left:0px;
     width: 100%;
     @include desktop {
         position: absolute;
-        top:738px; left:0;
+        top:730px; left:0;
         padding: 40px 0px 41px 0px;
     }
     @include tablette {
@@ -755,11 +770,11 @@ $breakpoints__C: (
 }
 .menu-pied_de_page-enchantee {
     position: absolute;
-    top:2050px; left:0px;
+    top:1962px; left:0px;
     width: 100%;
     @include desktop {
         position: absolute;
-        top:845px; left:0;
+        top:830px; left:0;
         padding: 5px 0px 5px 0px;
     }
     @include tablette {
