@@ -556,7 +556,7 @@ $color-quatrieme:#F2F2F2;
 }
 .menu-pied_de_page {
     position: relative;
-    top:1442px; left:0px;
+    top:1440px; left:0px;
     width: 100%;
     color: #ffffff;
     background-color: darken($color-quatrieme, 80%);
@@ -606,8 +606,8 @@ $color-quatrieme:#F2F2F2;
     }
     .progression {
         &__disque {
-                width: 500px;
-                height: 500px;
+            width: 500px;
+            height: 500px;
         }
     }
     .nav-logo {
@@ -680,7 +680,7 @@ $color-quatrieme:#F2F2F2;
         height: 630px;
     }
     .menu__image-enchantée img {
-        height: 635px;
+        height: 725px;
     }
     .menu__image {
         opacity:50%;
@@ -732,8 +732,8 @@ $color-quatrieme:#F2F2F2;
     }
     .menu-pied_de_page-enchantee {
         position: absolute;
-        top:830px; left:0;
-        padding: 5px 0px 5px 0px;
+        top:825px; left:0;
+        padding: 40px 0px 41px 0px;
     }
     .menu__image-enchantée {
         opacity:50%;
