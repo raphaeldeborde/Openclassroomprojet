@@ -1,72 +1,12 @@
-$color-primaire: #9356DC;
-$color-secondaire: #FF79DA ;
-$color-tertiaire: #99E2D0;
-$color-quatrieme:#F2F2F2;
-@font-face {
-    font-family: Shrikhand;
-    src: url('shrikhand.regular.ttf')
-}
-@mixin padding-size ($padding: 15px 30px 15px 0px) { 
-    padding:$padding;
-}
-.chargeur {
-    background-color: white;
-    position: fixed;
-    z-index: 999;
-    height:100%;
-    width: 100%;
-    opacity:0.7;
-    animation: disparition  399ms 2801ms forwards;
-}
-.chargeur-rond {
-    position: inherit;
-    top:40%; left:35%;
-    transform-origin: 50% 50%;
-    animation: disparition-magique 850ms 150ms ease-in-out;
-    animation-iteration-count: 3;
-}
-.progression {
-    &__disque {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        background: linear-gradient(355deg, lighten($color-tertiaire,5%) 12.5%,lighten($color-secondaire,5%));
-    }
-}
-@keyframes disparition-magique{
-    0% {
-        
-    }
-    33% {
-        transform:scale(1);
-    }
-    66% {
-        transform:scale(0);
-    }
-    100% {
-        transform:scale(1);
-    }
-}
-@keyframes disparition {
-    0% {
-        transform:scale(1);
-    }
-    100% {
-        transform:scale(0);
-    }
-}
-.passage_aux_trois_petits_points {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    word-wrap: break-Word;
-    overflow: hidden;
-}
+@import "./Utils/variables";
+@import "./Utils/mixins";
+@import "./Utils/extensions";
+@import "./Base/police";
+@import "./Base/titres";
+@import "./Layout/pied_de_page";
+@import "./Layout/animations";
 .barre_de_recherche {
     background-color: darken($color-quatrieme, 10%);
-}
-.police-titre {
-    font-family: 'Shrikhand';
 }
 .lien {
     text-decoration: none;
@@ -76,13 +16,10 @@ $color-quatrieme:#F2F2F2;
     text-decoration: none;
     color: white;
 }
-.titre {
-    margin-block-start: 0px;
-    margin-block-end: 0px;
-}
 .surligner_a_moitie {
     display: flex;
     flex-direction: row;
+    @extend .titre;
 }
 .surligner {
     border-bottom: 1px solid $color-tertiaire;
@@ -105,70 +42,70 @@ $color-quatrieme:#F2F2F2;
 }
 .nav-logo {
     text-align: center;
-    scale: 0.5;
+    transform: scale(0.4);
     display: flex;
     flex-direction: column;
     justify-content: center;
     object-fit: cover;
-    height: 100px;
+    height:50px;
+    padding: 12px 0px 0px 0px;
 }
 .barre_de_recherche {
-    background-color: darken($color-quatrieme, 10%);
+    background-color: darken($color-quatrieme, 3%);
 }
 .nav-localisation {
-    font-size: 24px;
-    border-top: 4px solid darken($color-quatrieme, 20%);
+    opacity: 0.9;
+    border-top: 3px solid darken($color-quatrieme, 10%);
     text-align: center;
-    @include padding-size(10px 0px 20px 0px);
+    @include padding-size(15px 0px 15px 0px);
+    i {
+        transform:scale(1);
+    }
     p {
         display: inline;
         font-size: 16px;
-        margin-left: 50px;
-        font-weight: 600;
+        margin-left: 15px;
+        font-weight: 500;
     }
 }
 .nav {
     &-descriptif {
     background-color: $color-quatrieme;
-    @include padding-size(0px 0px 90px 0px);
+    @include padding-size(0px 0px 72px 0px);
     text-align: center;
     }
     &-titre {
     font-size: 24px;
     font-weight: 900;
-    margin: 0px 0px 30px 0px;
-    @include padding-size(30px 0px 0px 0px);
+    margin: 0px 50px 11px 50px;
+    @include padding-size(37px 0px 0px 0px);
     }
     &-explication {
     font-size:18px;
-    margin:0px 0px 60px 0px;
-    padding:10px 0px 10px 0px;
+    font-weight: 300;
+    margin:0px 0px 44px 0px;
     }
     &-bouton {
     display: inline;
     color: white;
-    font-size: 19px;
+    font-size: 16px;
     box-shadow: 3px 3px darken($color-quatrieme, 5%), -3px 3px darken($color-quatrieme, 5%);
-    @include padding-size(18px 30px 18px 30px);
-    border-radius: 150px;
+    @include padding-size(15px 19px 16px 19px);
+    border-radius: 100px;
     background: linear-gradient(355deg, $color-primaire 12.5%,$color-secondaire);
-    margin: 0px 0px 30px 0px;
     }
 }
-.explorer :hover {
-    background: linear-gradient(355deg, lighten($color-primaire,5%) 12.5%,lighten($color-secondaire,5%));
-    box-shadow: 6px 6px darken($color-quatrieme, 5%), -6px 6px darken($color-quatrieme, 5%);
-}
 .fonctionnement {
-    padding: 50px 0px 50px 0px;
+    padding: 48px 0px 48px 0px;
     &-titre {
     font-size: 24px;
+    font-weight: 800;
     padding-inline-start: 0px;
-    margin:0px 30px 0px 30px;
+    margin:0px 0px 25px 20px;
     }
     ul {
     list-style-type: none;
-    margin: 0px 25px 0px 25px;
+    margin: 0px 20px 0px 20px;
     padding-inline-start: 0px;
     }
     &-liste {
@@ -178,32 +115,34 @@ $color-quatrieme:#F2F2F2;
         &__element {
             border-radius: 20px;
             border: 1px solid $color-quatrieme;
-            background-color: $color-quatrieme;
-            margin: 30px 0px 30px 0px;
-            @include padding-size(20px 0px 20px 0px);
-            box-shadow: 4px 4px 4px darken($color-quatrieme,5%);
+            background-color: lighten($color-quatrieme, 1%);
+            margin: 23px 1px 23px 11px;
+            @include padding-size(28px 14px 25px 14px);
+            box-shadow: 7px 7px 7px darken($color-quatrieme,5%);
+            i {
+                transform: scale(1.3);
+                color: darken($color-quatrieme, 35%);
+            }
             p {
-                font-size: 15px;
-                font-weight: 500;
+                font-size: 16px;
+                font-weight: 600;
             }
         }
     }
 }
 .fonctionnement_liste__titre {
     display: inline;
-    margin: 0px 0px 0px 30px;
+    margin: 0px 0px 0px 15px;
 }
 .fonctionnement-liste__numero_element {
     display: inline;
-    border-radius: 40px;
-    @include padding-size(10px 10px 10px 15px);
+    border-radius: 25px;
+    @include padding-size(5px 5px 3px 8px);
     position: relative;
     left: -25px;
-    top: 0px;
+    top: 5px;
     background-color: $color-primaire;
-    margin-left: 0px;
-    margin-right:0px;
-    font-size: 18px;
+    font-size: 14px;
     color: white;
 }
 .fonctionnement-liste :hover i {
@@ -216,7 +155,7 @@ $color-quatrieme:#F2F2F2;
     display: flex;
     flex-direction: column;
     background-color: $color-quatrieme;
-    padding:50px 0px 50px 0px;
+    padding:56px 0px 56px 0px;
 }
 .restaurants {
     display: flex;
@@ -233,35 +172,36 @@ $color-quatrieme:#F2F2F2;
 }
 .restaurants {
     &-titre {
-        margin-left: 30px;
+        margin: 0px 0px 12px 20px;
         align-self: start;
-        margin-bottom: 30px;
+        font-weight: 800;
     }
     &-accroche {
-        height: 300px;
+        height: 250px;
         width: 95%;
         position: relative;
         border: 1px solid $color-quatrieme;
         border-radius: 15px;
         background-color: #ffffff;
         box-shadow: 2px 2px darken($color-quatrieme,5%), -2px 2px darken($color-quatrieme,5%);
-        margin: 10px 0px 10px 0px;
+        margin: 9px 0px 9px 0px;
         &__titre {
-            font-size: 20px;
+            font-size: 18px;
             font-weight:700;
         }
         &__texte {
             display: flex;
             flex-direction: column;
-            justify-content: space-evenly;
-            height:80px;
+            justify-content: center;
+            padding: 11px 0px 10px 0px;
             p {
                 font-size: 18px;
+                padding: 2px 0px 0px 0px;
             }
         }
         img {
             object-fit: cover;
-            height:200px;
+            height:174px;
             width:100%;
             border-radius: 15px 15px 0px 0px;
         }
@@ -293,11 +233,12 @@ $color-quatrieme:#F2F2F2;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-        padding: 0px 30px 0px 30px;
+        padding: 0px 15px 0px 15px;
 }
 .coeur {
     color: black;
     position: relative;
+    transform: scale(1.5);
     z-index: 1;
     &:hover {
         color: transparent;
@@ -318,27 +259,6 @@ $color-quatrieme:#F2F2F2;
     z-index: -1;
     transition: opacity 650ms;
     }
-}
-.pied_de_page {
-    position: relative;
-    color: #ffffff;
-    background-color: darken($color-quatrieme, 80%);
-    @include padding-size(0px 0px 40px 0px);
-    &-titre {
-    padding: 20px 0px 0px 0px;
-    }
-    &-lien {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding:0px 0px 0px 0px;
-    i {
-        margin: 0px 15px 0px 0px;
-    }
-    }
-}
-.pied_de_page-titre_et_lien {
-    padding: 0px 0px 0px 10px;
 }
 .corps-menu {
     height:100%;
@@ -377,7 +297,7 @@ $color-quatrieme:#F2F2F2;
 }
 .menu__navigation-logo {
     text-align: center;
-    scale: 0.5;
+    transform:scale(0.5);
 }
 .menu__image img {
     height: 300px;
@@ -465,10 +385,14 @@ $color-quatrieme:#F2F2F2;
     font-weight: 700;
     font-size: 22px;
     margin: 5px 0px 5px 0px;
+    @extend .passage_aux_trois_petits_points;
+    @extend .titre;
 }
 .Entrees__choix-complement, .Plats__choix-complement, .Desserts__choix-complement {
     font-size: 20px;
     margin: 5px 0px 5px 0px;
+    @extend .passage_aux_trois_petits_points;
+    @extend .titre;
 }
 .Entrees__choix-prix_et_coché, .Plats__choix-prix_et_coché, .Desserts__choix-prix_et_coché {
     display: flex;
@@ -482,10 +406,12 @@ $color-quatrieme:#F2F2F2;
 .prix {
     font-size: 20px;
     margin: 5px 0px 5px 0px;
+    @extend .titre;
     &__fantome {
         margin: 5px 0px 5px 0px;
         color: white;
         height: 22px;
+        @extend .titre;
     }
 }
 .coché_vert_menthe {
@@ -551,48 +477,7 @@ $color-quatrieme:#F2F2F2;
 .centpxbottom {
     padding: 12px 0px 60px 0px;
 }
-.menu-pied_de_page_et_lien {
-    padding: 0px 0px 0px 10px;
-}
-.menu-pied_de_page {
-    position: relative;
-    top:1440px; left:0px;
-    width: 100%;
-    color: #ffffff;
-    background-color: darken($color-quatrieme, 80%);
-    @include padding-size(0px 0px 40px 0px);
-    &-titre {
-        padding: 20px 0px 0px 0px;
-    }
-    &-lien {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding:0px 0px 0px 0px;
-    i {
-        margin: 0px 15px 0px 0px;
-    }
-    }
-}
-.menu-pied_de_page-enchantee {
-    position: absolute;
-    top:1950px; left:0px;
-    width: 100%;
-    color: #ffffff;
-    background-color: darken($color-quatrieme, 80%);
-    @include padding-size(0px 0px 40px 0px);
-}
 @media screen and (min-width: 850px) and (max-width: 1150px) {
-    .chargeur-rond {
-        top:36%; left:39%;
-        transform-origin: 50% 50%;
-    }
-    .progression {
-        &__disque {
-            width: 200px;
-            height: 200px;
-        }
-    }
     .restaurants {
         display:flex;
         flex-direction: row;
@@ -600,56 +485,10 @@ $color-quatrieme:#F2F2F2;
     .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
          padding: 0px 5px 0px 5px;
     }
-    .pied_de_page {
-        padding: 0px;
-    }
-    .pied_de_page-titre_et_lien {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-        padding: 20px 0px 20px 0px;
-    }
-    .pied_de_page-titre {
-        padding: 0px 0px 0px 0px;
-    }
-    .menu-pied_de_page {
-        position: absolute;
-        top:1825px; left:0;
-        padding: 40px 0px 40px 0px;
-    }
-    .menu-pied_de_page_et_lien {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0px;
-    }
-    .menu-pied_de_page-titre {
-        padding: 0px;
-    }
-    .menu-pied_de_page-enchantee {
-        position:absolute;
-        top:1940px; left:0;
-        padding: 40px 0px 40px 0px;
-    }
-    .menu-pied_de_page-titre-enchantee {
-        padding: 0px;
-    }
 }
 @media screen and (min-width: 1150px) and (max-width: 1920px) {
-    .chargeur-rond {
-        top:22%; left:33%;
-        transform-origin: 50% 50%;
-    }
-    .progression {
-        &__disque {
-            width: 500px;
-            height: 500px;
-        }
-    }
     .nav-logo {
-            scale:0.25 
+            transform:scale(0.25); 
     }
     .nav {
         &-descriptif {
@@ -741,37 +580,6 @@ $color-quatrieme:#F2F2F2;
     }
     .centpxbottom {
         padding: 0px 0px 0px 0px;
-    }
-    .pied_de_page {
-        padding: 40px 0px 40px 0px;
-    }
-    .pied_de_page-titre_et_lien {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-    }
-    .pied_de_page-titre {
-        padding: 0px 0px 0px 0px;
-    }
-    .menu-pied_de_page_et_lien {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-around;
-    }
-    .menu-pied_de_page {
-        position: absolute;
-        top:730px; left:0;
-        padding: 40px 0px 41px 0px;
-        &-titre {
-            padding: 0px 0px 0px 0px;
-        }
-    }
-    .menu-pied_de_page-enchantee {
-        position: absolute;
-        top:825px; left:0;
-        padding: 40px 0px 41px 0px;
     }
     .menu__image-enchantée {
         opacity:50%;
