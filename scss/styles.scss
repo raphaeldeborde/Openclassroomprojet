@@ -3,6 +3,8 @@
 @import "./Utils/extensions";
 @import "./Base/police";
 @import "./Base/titres";
+@import "./Composants/boutons";
+@import "./Composants/fonds_momentanées";
 @import "./Layout/pied_de_page";
 @import "./Layout/animations";
 .barre_de_recherche {
@@ -522,6 +524,16 @@
     }
     .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
          padding: 0px 5px 0px 5px;
+    }
+    .Entrees__choix-pas_prix, .Plats__choix-pas_prix, .Desserts__choix-pas_prix {
+        flex-direction: row;
+    }
+    .Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix {
+        flex-direction: row;
+        align-items: center;
+    }
+    .Entrees__choix-prix_et_coché, .Plats__choix-prix_et_coché, .Desserts__choix-prix_et_coché {
+        flex-direction: row;
     }
 }
 @media screen and (min-width: 1150px) and (max-width: 1920px) {

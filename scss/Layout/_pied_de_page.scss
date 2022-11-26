@@ -1,5 +1,5 @@
 .pied_de_page {
-    position: relative;
+    position: absolute;
     color: #ffffff;
     background-color: darken($color-quatrieme, 75%);
     padding: 0px 0px 36px 0px;
@@ -37,7 +37,7 @@
     }
 }
 .menu__pied_de_page {
-    position: relative;
+    position: absolute;
     top:1100px;
     color: #ffffff;
     background-color: darken($color-quatrieme, 75%);
@@ -67,7 +67,7 @@
     }
 }
 .menu_française__pied_de_page {
-    position: relative;
+    position: absolute;
     top:1125px;
     color: #ffffff;
     background-color: darken($color-quatrieme, 75%);
@@ -97,7 +97,7 @@
     }
 }
 .menu_enchantee__pied_de_page {
-    position: relative;
+    position: absolute;
     top:1212px;
     color: #ffffff;
     background-color: darken($color-quatrieme, 75%);
@@ -127,29 +127,35 @@
     }
 }
 @media screen and (min-width: 850px) and (max-width: 1150px) {
-    .menu-pied_de_page {
+    .menu__pied_de_page {
+        width: 100%;
         position: absolute;
-        top:1825px; left:0;
-        padding: 40px 0px 40px 0px;
+        top:945px; left:0;
+    }
+    .menu_française__pied_de_page {
+        width: 100%;
+        position: absolute;
+        top:965px;
     }
     .menu_enchantee__pied_de_page {
-        width:100%;
+        width: 100%;
         position:absolute;
-        top:1557px; left:0;
+        top:1025px; left:0;
     }
 }
 @media screen and (min-width: 1150px) and (max-width: 1920px) {
     .menu__pied_de_page {
-        width:100%;
+        width: 100%;
         position: absolute;
         top:690px; left:0;
-        padding: 40px 0px 41px 0px;
-        &-titre {
-            padding: 0px 0px 0px 0px;
-        }
+    }
+    .menu_française__pied_de_page {
+        width: 100%;
+        position: absolute;
+        top:690px; left:0;
     }
     .menu_enchantee__pied_de_page {
-        width:100%;
+        width: 100%;
         position: absolute;
         top:692px; left:0;
     }    
