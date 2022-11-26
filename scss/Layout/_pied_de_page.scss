@@ -127,10 +127,13 @@
     }
 }
 @media screen and (min-width: 850px) and (max-width: 1150px) {
+    .pied_de_page {
+        width: 100%;
+    }
     .menu__pied_de_page {
         width: 100%;
         position: absolute;
-        top:945px; left:0;
+        top:1275px; left:0;
     }
     .menu_française__pied_de_page {
         width: 100%;
@@ -140,10 +143,13 @@
     .menu_enchantee__pied_de_page {
         width: 100%;
         position:absolute;
-        top:1025px; left:0;
+        top:1375px; left:0;
     }
 }
 @media screen and (min-width: 1150px) and (max-width: 1920px) {
+    .pied_de_page {
+        width: 100%;
+    }
     .menu__pied_de_page {
         width: 100%;
         position: absolute;
