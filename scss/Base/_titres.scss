@@ -1,0 +1,14 @@
+h1 {
+    @extend .titre;
+    @extend .police-titre;
+}
+.menu__titre-texte {
+    @extend .police-titre;
+}
+h2 {
+    @extend .passage_aux_trois_petits_points;
+    @extend .titre;
+}
+h3 {
+    @extend .titre;
+}

@@ -19,11 +19,12 @@
 .surligner_a_moitie {
     display: flex;
     flex-direction: row;
+    font-style: normal;
     @extend .titre;
 }
 .surligner {
-    border-bottom: 1px solid $color-tertiaire;
-    @include padding-size(0px 0px 10px 0px);
+    border-bottom: 3px solid $color-tertiaire;
+    @include padding-size(0px 0px 5px 0px);
 }
 .centrer {
     display: flex;
@@ -32,7 +33,10 @@
     align-items: center;
 }
 .hauteur_130 {
-    margin: 40px 0px 40px 0px;
+    margin: 14px 0px 0px 0px;
+}
+.hauteur_130-enchantee {
+    margin: 19px 0px 0px 0px;
 }
 .corps {
     margin: 0px;
@@ -40,15 +44,27 @@
     font-size: 15px;
     width:100%;
 }
+.nav-bandeau {
+    height: 55px;
+    padding: 9px 0px 0px 0px;
+}
 .nav-logo {
     text-align: center;
-    transform: scale(0.4);
+    font-size: 28px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    object-fit: cover;
-    height:50px;
-    padding: 12px 0px 0px 0px;
+    height:48px;
+    padding: 3px 0px 3px 0px;
+}
+.menu-nav-logo {
+    text-align: center;
+    font-size: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height:48px;
+    padding: 12px 0px 2px 0px;
 }
 .barre_de_recherche {
     background-color: darken($color-quatrieme, 3%);
@@ -272,7 +288,7 @@
 }
 .menu_et_titre {
     position: absolute;
-    top:350px; left:0;
+    top:283px; left:0;
     border-radius: 50px 50px 0px 0px;
     background-color: $color-quatrieme;
     width:100%;
@@ -282,10 +298,12 @@
     flex-direction: row;
     align-items: center;
     justify-content:center;
+    height:63px;
     &-fleche {
-        font-size: 12px;
+        font-size: 10px;
         position: absolute;
-        top: 38px; left: 20px;
+        left: 20px;
+        padding: 5px 0px 0px 0px;
     }
     &-logo{
     display: flex;
@@ -295,12 +313,8 @@
     height: 100px;
     }
 }
-.menu__navigation-logo {
-    text-align: center;
-    transform:scale(0.5);
-}
 .menu__image img {
-    height: 300px;
+    height:275px;
     width: 100%;   
 }
 .menu__image-enchantée img {
@@ -324,15 +338,32 @@
     justify-content: space-around;
     align-items: center;
     width:100%;
-    @include padding-size(20px 0px 0px 0px);
+    @include padding-size(32px 0px 0px 0px);
     &-texte {
-    font-size: 35px;
-    font-weight: 900;
+    font-size: 28px;
+    font-weight: 500;
     }
+}
+.Entrees{
+    margin:0px 0px 0px 0px;
+}
+.Plats {
+    margin:4px 0px 0px 0px;
+}
+.Plats-enchantee {
+    margin:16px 0px 0px 0px;
+}
+.Desserts {
+    margin:18.5px 0px 0px 0px;
+}
+.Desserts-enchantee {
+    margin:18px 0px 0px 0px;
 }
 .Entrees__titre, .Plats__titre, .Desserts__titre {
     display: inline-block;
-    margin:40px 0px 0px 20px;
+    margin:30px 0px 0px 22px;
+    font-size: 16px;
+    font-weight: 300;
 }
 .Entrees__choix, .Plats__choix, .Desserts__choix {
     &_1, &_2, &_3, &_4 {
@@ -341,7 +372,7 @@
         display:flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 20px 10px 0px 10px;
+        margin: 14px 14px 0px 10px;
     }
 }
 .Entrees__choix, .Plats__choix, .Desserts__choix {
@@ -377,20 +408,19 @@
 .Entrees__choix-pas_prix, .Plats__choix-pas_prix, .Desserts__choix-pas_prix,.Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     margin: 0px 0px 0px 0px;
-    padding:10px 0px 10px 10px;
+    padding:11px 0px 11px 1px;
 }
 .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
     font-weight: 700;
-    font-size: 22px;
-    margin: 5px 0px 5px 0px;
+    font-size: 18px;
+    margin: 1px 0px 2px 9px;
     @extend .passage_aux_trois_petits_points;
     @extend .titre;
 }
 .Entrees__choix-complement, .Plats__choix-complement, .Desserts__choix-complement {
-    font-size: 20px;
-    margin: 5px 0px 5px 0px;
+    font-size: 15px;
+    margin: 2px 0px 1px 9px;
     @extend .passage_aux_trois_petits_points;
     @extend .titre;
 }
@@ -401,16 +431,14 @@
 }
 .Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix{
     font-weight: 700;
-    min-width: 30px;
+    min-width: 38px;
 }
 .prix {
-    font-size: 20px;
-    margin: 5px 0px 5px 0px;
+    font-size: 14px;
     @extend .titre;
     &__fantome {
-        margin: 5px 0px 5px 0px;
         color: white;
-        height: 22px;
+        height: 28px;
         @extend .titre;
     }
 }
@@ -427,21 +455,25 @@
     transform: scaleX(0);
     transform-origin: right;
 }        
-.fa-circle-check {
-    color: white;
-    background-color: $color-tertiaire;
-    font-size: 32px;
+.fa-check {
+    color: $color-tertiaire;
+    font-size: 15px;
     display: flex;
     text-align: center;
     align-items: center;
+    padding: 2.5px;
+    border-radius: 100px;
+    background-color: #ffffff;
     justify-content: center;
-    transform: rotate(0deg);
+    transform: rotate(70deg);
 }
 .Entrees__choix, .Plats__choix, .Desserts__choix {
     &_1, &_2, &_3, &_4{
         &:hover {
-            & > .Entrees__choix-prix_et_coché, .Plats__choix-prix_et_coché, .Desserts__choix-prix_et_coché {
-                & > .coché_vert_menthe {
+            & > .Entrees__choix-prix {
+                min-width:5px;
+            } 
+            & > .Entrees__choix-prix_et_coché, .Plats__choix-prix_et_coché, .Desserts__choix-prix_et_coché {                    & > .coché_vert_menthe {
                     background-color: $color-tertiaire;
                     border-radius: 0px 15px 15px 0px;
                     padding: 0px 30px 0px 30px;
@@ -449,8 +481,8 @@
                     transform: scaleX(1);
                     transition: all 350ms;
                 }
-                & .fa-circle-check {
-                    transform: rotate(-720deg);
+                & .fa-check {
+                    transform: rotate(-360deg);
                     transition: all 350ms;
                 }
                 & > .prix {
@@ -463,10 +495,10 @@
 .menu__commander {
     box-shadow: 3px 3px darken($color-quatrieme, 5%), -3px 3px darken($color-quatrieme, 5%);
     background: linear-gradient(355deg, $color-primaire 12.5%,$color-secondaire); 
-    @include padding-size(18px 60px 18px 60px);
+    @include padding-size(15px 50px 16px 50px);
     border-radius: 150px;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     display: block;
 }
 .bouton-hover :hover{
@@ -474,8 +506,11 @@
     box-shadow: 6px 6px darken($color-quatrieme, 5%), -6px 6px darken($color-quatrieme, 5%);
     border-radius: 150px;
 }
+.centpxbottom-enchantee {
+    padding: 12px 0px 77px 0px;
+}
 .centpxbottom {
-    padding: 12px 0px 60px 0px;
+    padding: 12px 0px 59px 0px;
 }
 @media screen and (min-width: 850px) and (max-width: 1150px) {
     .restaurants {
@@ -487,9 +522,6 @@
     }
 }
 @media screen and (min-width: 1150px) and (max-width: 1920px) {
-    .nav-logo {
-            transform:scale(0.25); 
-    }
     .nav {
         &-descriptif {
             padding: 15px 0px 50px 0px;
