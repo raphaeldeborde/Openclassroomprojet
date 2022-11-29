@@ -179,7 +179,7 @@
     }
     &-accroche {
         height: 250px;
-        width: 95%;
+        width: 92%;
         position: relative;
         border: 1px solid $color-quatrieme;
         border-radius: 15px;
@@ -196,8 +196,9 @@
             justify-content: center;
             padding: 11px 0px 10px 0px;
             p {
-                font-size: 18px;
-                padding: 2px 0px 0px 0px;
+                font-size: 17px;
+                font-weight: 300;
+                padding: 3px 0px 0px 0px;
             }
         }
         img {
@@ -235,6 +236,12 @@
         justify-content: space-between;
         align-items: center;
         padding: 0px 15px 0px 15px;
+}
+.coeur_de_l_accueil {
+    padding: 0px 10px 3px 0px;
+}
+.coeur_du_menu {
+    padding: 0px 30px 0px 0px;
 }
 .coeur {
     color: black;
@@ -320,13 +327,14 @@
 .menu__titre {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     width:100%;
     @include padding-size(32px 0px 0px 0px);
     &-texte {
     font-size: 28px;
     font-weight: 500;
+    padding: 0px 0px 0px 20px;
     }
 }
 .Entrees{
@@ -357,7 +365,7 @@
         display:flex;
         flex-direction: row;
         justify-content: space-between;
-        margin: 14px 14px 0px 10px;
+        margin: 15px 15px 0px 15px;
     }
 }
 .Entrees__choix, .Plats__choix, .Desserts__choix {
@@ -398,12 +406,12 @@
 .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
     font-weight: 700;
     font-size: 18px;
-    margin: 11px 0px 2px 11px;
+    margin: 12px 0px 2px 11px;
     @extend .titre;
 }
 .Entrees__choix-complement_et_prix, .Plats__choix-complement_et_prix, .Desserts__choix-complement_et_prix {
     font-size: 15px;
-    margin: 2px 0px 0px 11px;
+    margin: 2px 0px 0px 12px;
     @extend .titre;
     display: flex;
     flex-direction: row;
@@ -453,7 +461,7 @@
     overflow: hidden;
     @extend .titre;
     font-weight: 300;
-    margin: 0px 0px 10px 0px;
+    margin: 0px 0px 12px 0px;
 }
 .Entrees__choix {
     &_1, &_2, &_3, &_4 {
@@ -569,7 +577,7 @@
     border-radius: 150px;
 }
 .centpxbottom-enchantee {
-    padding: 12px 0px 77px 0px;
+    padding: 17px 0px 77px 0px;
 }
 .centpxbottom-française {
     padding: 12px 0px 82px 0px;
@@ -582,13 +590,36 @@
         display:flex;
         flex-direction: row;
     }
-    .entrees {
+    .entrees, .entrees-enchantée {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         width:100%;
     }
-    .Entrees__choix_1, .Entrees__choix_2, .Entrees__choix_3 {
+    .plats {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width:100%;
+    }
+    .desserts {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width:100%;
+    }
+    .entrees-enchantée { 
+        & > .Entrees__choix_1, .Entrees__choix_2, .Entrees__choix_3, .Entrees__choix_4 {
+            width:23%;
+        }
+    }
+    .Entrees__choix_1, .Entrees__choix_2, .Entrees__choix_3, .Entrees__choix_4 {
+        width:30%;
+    }
+    .Plats__choix_1, .Plats__choix_2, .Plats__choix_3 {
+        width:30%;
+    }
+    .Desserts__choix_1, .Desserts__choix_2, .Desserts__choix_3 {
         width:30%;
     }
     .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
@@ -638,9 +669,6 @@
                 margin: 0px 10px 0px 10px;
             }
         }
-    }
-    .fonctionnement_liste__titre {
-        margin: 0px 10px 0px 0px;
     }
     .restaurants__et__titre {
         padding: 15px 0px 0px 0px;
