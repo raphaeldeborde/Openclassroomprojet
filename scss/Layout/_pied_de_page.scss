@@ -71,7 +71,7 @@
 .menu_française__pied_de_page {
     width: 100%;
     position: absolute;
-    top:1410px;
+    top:1480px;
     color: #ffffff;
     background-color: darken($color-quatrieme, 75%);
     padding: 0px 0px 36px 0px;
@@ -98,6 +98,14 @@
         margin-block-start: 0px;
         margin-block-end: 0px;
     }
+}
+.menu_le_delice__pied_de_page {
+    width:100%;
+    position: absolute;
+    top:1464px;
+    color: #ffffff;
+    background-color: darken($color-quatrieme, 75%);
+    padding: 0px 0px 36px 0px;
 }
 .menu_enchantee__pied_de_page {
     width:100%;
