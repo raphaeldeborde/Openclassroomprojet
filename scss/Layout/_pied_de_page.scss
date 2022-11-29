@@ -40,7 +40,7 @@
 .menu__pied_de_page {
     width: 100%;
     position: absolute;
-    top:1430px;
+    top:1415px;
     color: #ffffff;
     background-color: darken($color-quatrieme, 75%);
     padding: 0px 0px 36px 0px;
@@ -71,7 +71,7 @@
 .menu_française__pied_de_page {
     width: 100%;
     position: absolute;
-    top:1460px;
+    top:1410px;
     color: #ffffff;
     background-color: darken($color-quatrieme, 75%);
     padding: 0px 0px 36px 0px;
@@ -102,7 +102,7 @@
 .menu_enchantee__pied_de_page {
     width:100%;
     position: absolute;
-    top:1550px;
+    top:1490px;
     color: #ffffff;
     background-color: darken($color-quatrieme, 75%);
     padding: 0px 0px 36px 0px;
@@ -132,13 +132,13 @@
 }
 @media screen and (min-width: 850px) and (max-width: 1150px) {
     .menu__pied_de_page {
-        top:1275px; left:0;
+        top:1400px; left:0;
     }
     .menu_française__pied_de_page {
-        top:1295px;
+        top:1415px;
     }
     .menu_enchantee__pied_de_page {
-        top:1375px; left:0;
+        top:1475px; left:0;
     }
 }
 @media screen and (min-width: 1150px) and (max-width: 1920px) {

@@ -13,3 +13,15 @@
         background: linear-gradient(355deg, lighten($color-tertiaire,5%) 12.5%,lighten($color-secondaire,5%));
     }
 }
+.centrer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hauteur_130 {
+    margin: 14px 0px 0px 0px;
+}
+.hauteur_130-enchantee {
+    margin: 19px 0px 0px 0px;
+}

@@ -2,6 +2,7 @@
 @import "./Utils/mixins";
 @import "./Utils/extensions";
 @import "./Base/police";
+@import "./Base/base";
 @import "./Base/titres";
 @import "./Composants/boutons";
 @import "./Composants/fonds_momentanées";
@@ -27,24 +28,6 @@
 .surligner {
     border-bottom: 3px solid $color-tertiaire;
     @include padding-size(0px 0px 5px 0px);
-}
-.centrer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.hauteur_130 {
-    margin: 14px 0px 0px 0px;
-}
-.hauteur_130-enchantee {
-    margin: 19px 0px 0px 0px;
-}
-.corps {
-    margin: 0px;
-    font-family: 'Roboto', 'sans-serif';
-    font-size: 15px;
-    width:100%;
 }
 .nav-bandeau {
     height: 55px;
@@ -407,42 +390,35 @@
     opacity: 1;
 }
 }
-.Entrees__choix-pas_prix, .Plats__choix-pas_prix, .Desserts__choix-pas_prix,.Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix {
-    display: flex;
+.Entree__choix-nom_complement_et_prix, .Plat__choix-nom_complement_et_prix, .Dessert__choix-nom_complement_et_prix {
+    display:flex;
     flex-direction: column;
-    margin: 0px 0px 0px 0px;
-    padding:11px 0px 11px 1px;
+    width: 100%;
 }
 .Entrees__choix-nom, .Plats__choix-nom, .Desserts__choix-nom {
     font-weight: 700;
     font-size: 18px;
-    margin: 1px 0px 2px 9px;
-    @extend .passage_aux_trois_petits_points;
+    margin: 11px 0px 2px 11px;
     @extend .titre;
 }
-.Entrees__choix-complement, .Plats__choix-complement, .Desserts__choix-complement {
+.Entrees__choix-complement_et_prix, .Plats__choix-complement_et_prix, .Desserts__choix-complement_et_prix {
     font-size: 15px;
-    margin: 2px 0px 1px 9px;
-    @extend .passage_aux_trois_petits_points;
+    margin: 2px 0px 0px 11px;
     @extend .titre;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
-.Entrees__choix-prix_et_coché, .Plats__choix-prix_et_coché, .Desserts__choix-prix_et_coché {
+.Entrees__choix-coché, .Plats__choix-coché, .Desserts__choix-coché {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
-.Entrees__choix-prix, .Plats__choix-prix, .Desserts__choix-prix{
-    font-weight: 700;
-    min-width: 38px;
-}
 .prix {
     font-size: 14px;
+    font-weight: 700;
+    margin: 2px 0px 0px 0px;
     @extend .titre;
-    &__fantome {
-        color: white;
-        height: 28px;
-        @extend .titre;
-    }
 }
 .coché_vert_menthe {
     background-color: $color-tertiaire;
@@ -451,7 +427,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 0px 15px 15px 0px;
-    margin: 0px 0px 0px 10px;
+    margin: 0px 0px 0px 23px;
     width:0;
     overflow: hidden;
     transform: scaleX(0);
@@ -469,13 +445,60 @@
     justify-content: center;
     transform: rotate(70deg);
 }
-.Entrees__choix, .Plats__choix, .Desserts__choix {
-    &_1, &_2, &_3, &_4{
+.Entrees__choix-complement, .Plats__choix-complement, .Desserts__choix-complement {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    word-wrap: break-Word;
+    overflow: hidden;
+    @extend .titre;
+    font-weight: 300;
+    margin: 0px 0px 10px 0px;
+}
+.Entrees__choix {
+    &_1, &_2, &_3, &_4 {
         &:hover {
-            & > .Entrees__choix-prix {
-                min-width:5px;
-            } 
-            & > .Entrees__choix-prix_et_coché, .Plats__choix-prix_et_coché, .Desserts__choix-prix_et_coché {                    & > .coché_vert_menthe {
+            & .Entrees__choix-nom {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                word-wrap: break-Word;
+                overflow: hidden;
+            }
+        }
+    }
+}
+.Plats__choix {
+    &_1, &_2, &_3, &_4 {
+        &:hover {
+            & .Plats__choix-nom {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                word-wrap: break-Word;
+                overflow: hidden;
+            }
+        }
+    }
+}
+.Desserts__choix {
+    &_1, &_2, &_3, &_4 {
+        &:hover {
+            & .Desserts__choix-nom {
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+                word-wrap: break-Word;
+                overflow: hidden;
+            }
+        }
+    }
+}
+.Entrees__choix {
+    &_1, &_2, &_3, &_4 {
+        &:hover {
+            & > .Entrees__choix-coché {                    
+                & > .coché_vert_menthe {
                     background-color: $color-tertiaire;
                     border-radius: 0px 15px 15px 0px;
                     padding: 0px 30px 0px 30px;
@@ -487,8 +510,45 @@
                     transform: rotate(-360deg);
                     transition: all 350ms;
                 }
-                & > .prix {
-                    padding: 0px 10px 0px 0px;
+            }
+        }
+    }
+}
+.Plats__choix {
+    &_1, &_2, &_3 {
+        &:hover {
+            & > .Plats__choix-coché {                    
+                & > .coché_vert_menthe {
+                    background-color: $color-tertiaire;
+                    border-radius: 0px 15px 15px 0px;
+                    padding: 0px 30px 0px 30px;
+                    transform-origin: right;
+                    transform: scaleX(1);
+                    transition: all 350ms;
+                }
+                & .fa-check {
+                    transform: rotate(-360deg);
+                    transition: all 350ms;
+                }
+            }
+        }
+    }
+}
+.Desserts__choix {
+    &_1, &_2, &_3 {
+        &:hover {
+            & > .Desserts__choix-coché {                    
+                & > .coché_vert_menthe {
+                    background-color: $color-tertiaire;
+                    border-radius: 0px 15px 15px 0px;
+                    padding: 0px 30px 0px 30px;
+                    transform-origin: right;
+                    transform: scaleX(1);
+                    transition: all 350ms;
+                }
+                & .fa-check {
+                    transform: rotate(-360deg);
+                    transition: all 350ms;
                 }
             }
         }
