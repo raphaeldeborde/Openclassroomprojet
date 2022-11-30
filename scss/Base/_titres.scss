@@ -5,6 +5,9 @@ h1 {
 .menu__titre-texte {
     @extend .police-titre;
 }
+.menu__titre-texte_français {
+    @extend .police-titre;
+}
 h2 {
     @extend .titre;
 }

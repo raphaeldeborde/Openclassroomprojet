@@ -326,12 +326,25 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    width:100%;
+    width:94%;
     @include padding-size(32px 0px 0px 0px);
-    &-texte {
+}
+.menu__titre-texte {
     font-size: 28px;
     font-weight: 500;
-    }
+}
+.menu__titre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width:94%;
+    @include padding-size(32px 0px 0px 0px);
+}
+.menu__titre-texte_français {
+    font-size: 28px;
+    font-weight: 500;
+    padding: 0% 17% 0% 0%;
 }
 .Entrees{
     margin:0px 0px 0px 0px;
@@ -665,9 +678,6 @@
                 margin: 0px 10px 0px 10px;
             }
         }
-    }
-    .menu__titre {
-        justify-content: space-between;
     }
     .restaurants__et__titre {
         padding: 15px 0px 0px 0px;

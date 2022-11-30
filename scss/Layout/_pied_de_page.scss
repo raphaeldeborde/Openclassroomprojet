@@ -102,7 +102,7 @@
 .menu_le_delice__pied_de_page {
     width:100%;
     position: absolute;
-    top:1508px;
+    top:1462px;
     color: #ffffff;
     background-color: darken($color-quatrieme, 75%);
     padding: 0px 0px 36px 0px;
@@ -163,10 +163,13 @@
 }
 @media screen and (min-width: 850px) and (max-width: 1150px) {
     .menu__pied_de_page {
-        top:940px; left:0;
+        top:960px; left:0;
     }
     .menu_française__pied_de_page {
-        top:940px;
+        top:960px;
+    }
+    .menu_le_delice__pied_de_page {
+        top:985px; left:0;
     }
     .menu_enchantee__pied_de_page {
         top:965px; left:0;
@@ -179,7 +182,10 @@
     .menu_française__pied_de_page {
         top:690px; left:0;
     }
+    .menu_le_delice__pied_de_page {
+        top:692px; left:0;
+    }
     .menu_enchantee__pied_de_page {
         top:692px; left:0;
-    }    
+    }  
 }
