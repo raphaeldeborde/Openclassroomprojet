@@ -240,9 +240,6 @@
 .coeur_de_l_accueil {
     padding: 0px 10px 3px 0px;
 }
-.coeur_du_menu {
-    padding: 0px 30px 0px 0px;
-}
 .coeur {
     color: black;
     position: relative;
@@ -327,14 +324,13 @@
 .menu__titre {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width:100%;
     @include padding-size(32px 0px 0px 0px);
     &-texte {
     font-size: 28px;
     font-weight: 500;
-    padding: 0px 0px 0px 20px;
     }
 }
 .Entrees{
@@ -669,6 +665,9 @@
                 margin: 0px 10px 0px 10px;
             }
         }
+    }
+    .menu__titre {
+        justify-content: space-between;
     }
     .restaurants__et__titre {
         padding: 15px 0px 0px 0px;
